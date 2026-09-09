@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+:root {
+  /* Central Theme Background Color - Adjust here to change site-wide background */
+  --bg-theme-color: #c0e5ff;
+  --bg-theme-dots: #e2f3ff;
+  --scrollbar-thumb: #7DB9EB;
+  --scrollbar-thumb-hover: #F2789F;
+}
+
+body {
+  background-color: var(--bg-theme-color);
+}
+
+@layer utilities {
+  .font-fluffy {
+    font-family: 'DynaPuff', cursive;
+  }
+
+  .font-handwritten {
+    font-family: 'Caveat', cursive;
+  }
+
+  .font-editorial,
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Fluffy 3D plush text effect matching Image 2 */
+  .text-fluffy-pink {
+    color: #FF8DA1;
+    text-shadow:
+      0px 4px 0px #F2789F,
+      0px 8px 12px rgba(242, 120, 159, 0.35),
+      2px 2px 0px #FFF,
+      -2px -2px 0px #FFF;
+  }
+
+  .text-fluffy-tiffany {
+    color: #52C0B6;
+    text-shadow:
+      0px 4px 0px #3AA198,
+      0px 8px 12px rgba(82, 192, 182, 0.35),
+      2px 2px 0px #FFF,
+      -2px -2px 0px #FFF;
+  }
+
+  .text-fluffy-green {
+    color: #78A587;
+    text-shadow:
+      0px 4px 0px #5B886B,
+      0px 8px 12px rgba(120, 165, 135, 0.35),
+      2px 2px 0px #FFF,
+      -2px -2px 0px #FFF;
+  }
+
+  .text-fluffy-orange {
+    color: #FFA366;
+    text-shadow:
+      0px 4px 0px #E58648,
+      0px 8px 12px rgba(255, 163, 102, 0.35),
+      2px 2px 0px #FFF,
+      -2px -2px 0px #FFF;
+  }
+
+  /* Washi tape sticker effect */
+  .washi-tape-pink {
+    background-color: rgba(255, 204, 213, 0.85);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 2px dashed rgba(255, 141, 161, 0.5);
+    border-right: 2px dashed rgba(255, 141, 161, 0.5);
+  }
+
+  .washi-tape-tiffany {
+    background-color: rgba(186, 237, 233, 0.85);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 2px dashed rgba(114, 199, 192, 0.5);
+    border-right: 2px dashed rgba(114, 199, 192, 0.5);
+  }
+
+  .washi-tape-green {
+    background-color: rgba(206, 227, 212, 0.85);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 2px dashed rgba(120, 165, 135, 0.5);
+    border-right: 2px dashed rgba(120, 165, 135, 0.5);
+  }
+
+  .washi-tape-orange {
+    background-color: rgba(255, 224, 204, 0.85);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 2px dashed rgba(255, 163, 102, 0.5);
+    border-right: 2px dashed rgba(255, 163, 102, 0.5);
+  }
+
+  /* Soft pastel paper texture background pattern using CSS variables */
+  .bg-paper-texture {
+    background-color: var(--bg-theme-color);
+    background-image:
+      radial-gradient(var(--bg-theme-dots) 0.75px, transparent 0.75px),
+      radial-gradient(var(--bg-theme-dots) 0.75px, var(--bg-theme-dots) 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-theme-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 2px solid var(--bg-theme-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Sparkling twinkle keyframe */
+@keyframes sparkleFloat {
+
+  0%,
+  100% {
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.animate-sparkle-float {
+  animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+/* Shining Line Light Beam Animation */
+@keyframes shiningBeam {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+.animate-shining-beam {
+  animation: shiningBeam 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
