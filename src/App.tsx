@@ -74,7 +74,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-paper-texture text-[#2C302E] font-sans-clean selection:bg-[#FF8DA1] selection:text-white">
+    <div className="relative min-h-screen w-full max-w-full overflow-x-clip bg-paper-texture text-[#2C302E] font-sans-clean selection:bg-[#FF8DA1] selection:text-white">
       {/* Random Floating Stickers Background */}
       <RandomBackgroundStickers />
 

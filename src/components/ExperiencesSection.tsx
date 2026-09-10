@@ -51,9 +51,9 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ experien
         </div>
 
         {/* Experience Cards Container */}
-        <div className="relative space-y-10">
-          {/* Central Shining Timeline Track & Single Traveling Orb */}
-          <div className="absolute top-4 bottom-4 left-4 w-1.5 -translate-x-1/2 md:left-1/2 z-10">
+        <div className="relative space-y-6 md:space-y-10">
+          {/* Central Shining Timeline Track & Single Traveling Orb (Desktop Only) */}
+          <div className="hidden md:block absolute top-4 bottom-4 left-1/2 w-1.5 -translate-x-1/2 z-10">
             {/* Base Background Track & Scroll Fill Line */}
             <div className="relative h-full w-full bg-stone-200/80 rounded-full overflow-hidden">
               <motion.div
@@ -106,10 +106,10 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ experien
                 className={`scroll-mt-28 relative flex flex-col md:flex-row ${isEven ? 'md:flex-row-reverse' : ''
                   } items-center`}
               >
-                {/* Content Box */}
-                <div className="ml-12 w-full md:ml-0 md:w-1/2 md:px-8">
+                {/* Content Box - Full width on mobile, half on desktop */}
+                <div className="w-full px-1 sm:px-3 md:w-1/2 md:px-8">
                   <div
-                    className="group relative rounded-3xl border border-stone-200 bg-white/95 p-6 md:p-8 shadow-lg hover:shadow-xl backdrop-blur-md transition-all duration-300 hover:border-pink-300"
+                    className="group relative rounded-3xl border border-stone-200 bg-white/95 p-5 sm:p-6 md:p-8 shadow-lg hover:shadow-xl backdrop-blur-md transition-all duration-300 hover:border-pink-300 overflow-visible"
                   >
                     {/* Corner Sticker for Card */}
                     <CornerSticker
@@ -119,7 +119,7 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = ({ experien
                         ] as StickerType)
                       }
                       position={isEven ? 'top-right' : 'top-left'}
-                      size={60}
+                      size={58}
                       rotation={isEven ? 12 : -12}
                     />
 

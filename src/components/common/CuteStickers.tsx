@@ -566,15 +566,17 @@ export const CornerSticker: React.FC<CornerStickerProps> = ({
   className = '',
 }) => {
   const positionClasses = {
-    'top-right': '-top-5 -right-5 md:-top-6 md:-right-6',
-    'top-left': '-top-5 -left-5 md:-top-6 md:-left-6',
-    'bottom-right': '-bottom-5 -right-5 md:-bottom-6 md:-right-6',
-    'bottom-left': '-bottom-5 -left-5 md:-bottom-6 md:-left-6',
+    'top-right': '-top-2 -right-2 sm:-top-4 sm:-right-4 md:-top-6 md:-right-6',
+    'top-left': '-top-2 -left-2 sm:-top-4 sm:-left-4 md:-top-6 md:-left-6',
+    'bottom-right': '-bottom-2 -right-2 sm:-bottom-4 sm:-right-4 md:-bottom-6 md:-right-6',
+    'bottom-left': '-bottom-2 -left-2 sm:-bottom-4 sm:-left-4 md:-bottom-6 md:-left-6',
   }[position];
 
   return (
-    <div className={`absolute ${positionClasses} z-20 ${className}`}>
-      <Sticker type={type} size={size} rotation={rotation} />
+    <div className={`absolute ${positionClasses} z-20 pointer-events-none ${className}`}>
+      <div className="scale-75 sm:scale-90 md:scale-100 origin-center pointer-events-auto">
+        <Sticker type={type} size={size} rotation={rotation} />
+      </div>
     </div>
   );
 };

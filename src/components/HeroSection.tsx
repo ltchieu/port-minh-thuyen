@@ -145,9 +145,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
             </motion.div>
           </div>
 
-          {/* Right Column: 3D Pop-Up Interactive Avatar (No Container Frame) */}
+          {/* Right Column: 3D Pop-Up Interactive Avatar (Fully Responsive) */}
           <div
-            className="relative flex justify-center items-center lg:col-span-6 py-4 select-none"
+            className="relative flex justify-center items-center lg:col-span-6 py-6 md:py-8 px-2 sm:px-6 w-full max-w-full select-none"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{ perspective: 1200 }}
@@ -161,7 +161,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
               initial={{ opacity: 0, scale: 0.88, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-xl flex items-center justify-center cursor-pointer"
+              className="relative w-full max-w-[340px] sm:max-w-[460px] lg:max-w-xl flex items-center justify-center cursor-pointer"
             >
               {/* 3D Depth Layer -1: Breathing Pastel Glow Halo */}
               <motion.div
@@ -170,7 +170,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                   y: auraY,
                   transform: 'translateZ(-50px)',
                 }}
-                className="pointer-events-none absolute -inset-6 m-auto h-80 w-80 sm:h-[420px] sm:w-[420px] rounded-full bg-gradient-to-tr from-[#FF8DA1]/35 via-[#FFE3E8]/45 to-[#81D8D0]/35 blur-3xl opacity-85"
+                className="pointer-events-none absolute -inset-4 sm:-inset-6 m-auto h-64 w-64 sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px] rounded-full bg-gradient-to-tr from-[#FF8DA1]/35 via-[#FFE3E8]/45 to-[#81D8D0]/35 blur-2xl sm:blur-3xl opacity-85"
               />
 
               {/* 3D Depth Layer 1: Standalone Transparent Cutout Image */}
@@ -180,13 +180,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                   y: avatarTranslateY,
                   transform: 'translateZ(65px)',
                 }}
-                className="relative z-10 w-full flex justify-center"
+                className="relative z-10 w-full flex justify-center py-4"
               >
                 <img
                   src={data.profileImage}
                   alt="Lê Thị Kim Thuyên - Content Marketing / Social Media"
                   draggable={false}
-                  className="w-full max-w-[480px] sm:max-w-[560px] lg:max-w-[620px] object-contain drop-shadow-[0_28px_40px_rgba(242,120,159,0.38)] drop-shadow-[0_10px_22px_rgba(0,0,0,0.1)] transition-transform duration-500 hover:scale-[1.03]"
+                  className="w-full max-w-[280px] sm:max-w-[420px] lg:max-w-[580px] object-contain drop-shadow-[0_20px_30px_rgba(242,120,159,0.38)] drop-shadow-[0_8px_18px_rgba(0,0,0,0.1)] transition-transform duration-500 hover:scale-[1.03]"
                 />
               </motion.div>
 
@@ -199,17 +199,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                   y: badge1Y,
                   transform: 'translateZ(110px)',
                 }}
-                className="absolute top-2 -left-2 sm:-left-6 z-20 pointer-events-auto"
+                className="absolute top-0 left-0 sm:top-2 sm:-left-4 z-20 pointer-events-auto"
               >
-                <div className="flex items-center gap-2.5 rounded-2xl border border-pink-200/90 bg-white/95 px-4 py-2.5 shadow-xl shadow-pink-900/10 backdrop-blur-md transition-transform hover:scale-110 hover:-rotate-2">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#FFE3E8] text-[#F2789F] shadow-xs">
-                    <FontAwesomeIcon icon={faWandMagicSparkles} className="h-4 w-4" />
+                <div className="flex items-center gap-2 sm:gap-2.5 rounded-xl sm:rounded-2xl border border-pink-200/90 bg-white/95 px-2.5 py-1.5 sm:px-4 sm:py-2.5 shadow-lg sm:shadow-xl shadow-pink-900/10 backdrop-blur-md transition-transform hover:scale-105 hover:-rotate-2">
+                  <span className="flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-lg sm:rounded-xl bg-[#FFE3E8] text-[#F2789F] shadow-xs shrink-0">
+                    <FontAwesomeIcon icon={faWandMagicSparkles} className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                   </span>
                   <div>
-                    <p className="font-sans-clean text-[11px] font-bold uppercase tracking-wider text-[#D84C72]">
+                    <p className="font-sans-clean text-[9px] sm:text-[11px] font-bold uppercase tracking-wider text-[#D84C72] leading-tight">
                       Content Marketing
                     </p>
-                    <p className="font-editorial text-xs font-bold text-stone-800">
+                    <p className="font-editorial text-[11px] sm:text-xs font-bold text-stone-800 leading-tight">
                       Social Media Specialist
                     </p>
                   </div>
@@ -223,20 +223,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                   y: badge2Y,
                   transform: 'translateZ(120px)',
                 }}
-                className="absolute -bottom-2 -left-1 sm:-left-4 z-20 pointer-events-auto"
+                className="absolute bottom-0 left-0 sm:-bottom-2 sm:-left-4 z-20 pointer-events-auto"
               >
-                <div className="flex items-center gap-3 rounded-2xl border border-[#81D8D0]/40 bg-white/95 px-4 py-2.5 shadow-xl shadow-teal-900/10 backdrop-blur-md transition-transform hover:scale-110 hover:rotate-2">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#E6F4F1] text-[#52C0B6] shadow-xs">
-                    <FontAwesomeIcon icon={faVideo} className="h-4 w-4" />
+                <div className="flex items-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl border border-[#81D8D0]/40 bg-white/95 px-2.5 py-1.5 sm:px-4 sm:py-2.5 shadow-lg sm:shadow-xl shadow-teal-900/10 backdrop-blur-md transition-transform hover:scale-105 hover:rotate-2">
+                  <span className="flex h-6 w-6 sm:h-8 sm:w-8 items-center justify-center rounded-lg sm:rounded-xl bg-[#E6F4F1] text-[#52C0B6] shadow-xs shrink-0">
+                    <FontAwesomeIcon icon={faVideo} className="h-3 w-3 sm:h-4 sm:w-4" />
                   </span>
                   <div>
-                    <div className="flex items-center gap-1.5 text-stone-500 text-[11px] mb-0.5">
+                    <div className="flex items-center gap-1.5 text-stone-500 text-[10px] sm:text-[11px] mb-0.5">
                       <FontAwesomeIcon icon={faTiktok} className="hover:text-stone-900" />
                       <FontAwesomeIcon icon={faInstagram} className="hover:text-pink-600" />
                       <FontAwesomeIcon icon={faFacebook} className="hover:text-blue-600" />
                       <FontAwesomeIcon icon={faThreads} className="hover:text-stone-900" />
                     </div>
-                    <p className="font-editorial text-xs font-bold text-stone-800">
+                    <p className="font-editorial text-[11px] sm:text-xs font-bold text-stone-800 leading-tight">
                       Short-form Video & Viral
                     </p>
                   </div>
@@ -248,9 +248,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 style={{
                   transform: 'translateZ(125px)',
                 }}
-                className="absolute -top-6 right-4 sm:right-8 z-20 pointer-events-none"
+                className="absolute top-0 right-0 sm:-top-6 sm:right-6 z-20 pointer-events-none"
               >
-                <CornerSticker type="duck_shower_gun" position="top-right" size={82} rotation={12} />
+                <div className="scale-75 sm:scale-100 origin-top-right">
+                  <CornerSticker type="duck_shower_gun" position="top-right" size={76} rotation={12} />
+                </div>
               </motion.div>
 
               {/* 3D Floating Cute Star Badge (Right) */}
@@ -258,10 +260,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 style={{
                   transform: 'translateZ(100px)',
                 }}
-                className="absolute -right-2 bottom-16 z-20 pointer-events-auto"
+                className="absolute right-0 bottom-12 sm:right-0 sm:bottom-16 z-20 pointer-events-auto"
               >
-                <div className="flex h-12 w-12 rotate-12 items-center justify-center rounded-full bg-[#FFB380] text-stone-900 shadow-lg transition-transform hover:rotate-45 hover:scale-110">
-                  <FontAwesomeIcon icon={faStar} className="h-5 w-5 text-stone-900" />
+                <div className="flex h-9 w-9 sm:h-12 sm:w-12 rotate-12 items-center justify-center rounded-full bg-[#FFB380] text-stone-900 shadow-md sm:shadow-lg transition-transform hover:rotate-45 hover:scale-110">
+                  <FontAwesomeIcon icon={faStar} className="h-3.5 w-3.5 sm:h-5 sm:w-5 text-stone-900" />
                 </div>
               </motion.div>
 
@@ -270,9 +272,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                 style={{
                   transform: 'translateZ(115px)',
                 }}
-                className="absolute -bottom-4 right-4 sm:right-8 z-20 pointer-events-none"
+                className="absolute bottom-0 right-0 sm:-bottom-4 sm:right-4 z-20 pointer-events-none"
               >
-                <CornerSticker type="jellyfish_cute" position="bottom-right" size={72} rotation={-8} />
+                <div className="scale-75 sm:scale-100 origin-bottom-right">
+                  <CornerSticker type="jellyfish_cute" position="bottom-right" size={64} rotation={-8} />
+                </div>
               </motion.div>
             </motion.div>
           </div>
