@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="40" fill="#1C1B1A" />
+  <!-- Elegant Monogram Icon -->
+  <path d="M70 60 C70 50, 85 45, 100 45 C115 45, 130 50, 130 65 C130 80, 115 85, 100 85 L70 85 Z" fill="none" stroke="#E6C594" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 85 L70 145" stroke="#E6C594" stroke-width="8" stroke-linecap="round"/>
+  <path d="M100 85 C115 85, 130 92, 130 110 C130 128, 115 135, 100 135 C85 135, 70 128, 70 110" fill="none" stroke="#E6C594" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Subtext -->
+  <text x="100" y="168" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">QUOC PHONG</text>
+  <text x="100" y="182" font-family="system-ui, -apple-system, sans-serif" font-size="7" font-weight="500" fill="#E6C594" text-anchor="middle" letter-spacing="2">HAIR SALON &amp; SPA</text>
+</svg>

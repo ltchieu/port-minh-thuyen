@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="40" fill="#1C1B1A" />
+  <!-- Faceted Golden Diamond Icon -->
+  <g transform="translate(100, 75) scale(0.9)">
+    <polygon points="0,-35 32,-12 0,40 -32,-12" fill="none" stroke="#E5B96E" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="-16,-12 0,-35 16,-12 0,40" fill="#E5B96E" opacity="0.25" stroke="#E5B96E" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="-32" y1="-12" x2="32" y2="-12" stroke="#E5B96E" stroke-width="3"/>
+    <line x1="-16" y1="-12" x2="0" y2="40" stroke="#E5B96E" stroke-width="3"/>
+    <line x1="16" y1="-12" x2="0" y2="40" stroke="#E5B96E" stroke-width="3"/>
+    <line x1="0" y1="-35" x2="-16" y2="-12" stroke="#E5B96E" stroke-width="3"/>
+    <line x1="0" y1="-35" x2="16" y2="-12" stroke="#E5B96E" stroke-width="3"/>
+  </g>
+  <!-- Text -->
+  <text x="100" y="148" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">SAVAX</text>
+  <text x="100" y="166" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="600" fill="#E5B96E" text-anchor="middle" letter-spacing="3">LUXURY &amp; DOOR</text>
+</svg>

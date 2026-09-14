@@ -23,8 +23,8 @@ export default function App() {
         // Ensure new activities data is loaded if local storage has stale/outdated data
         if (
           !parsed.projects ||
-          !parsed.projects.some((p: any) => p.id === 'uni-06') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-marketer-contest') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-savax-luxury-door') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.videoClips?.some((c: any) => c.localVideoUrl?.includes('/videos/quoc_phong/'))) ||
           !parsed.startups ||
           !parsed.startups.some((s: any) => s.id === 'startup-carne-gemstone') ||
           !parsed.activities ||

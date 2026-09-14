@@ -1,9 +1,34 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faCircleCheck, faCalendarDays, faUser, faExpand, faImages, faFilePdf, faFileWord, faGraduationCap, faChevronLeft, faChevronRight, faPlay } from '@fortawesome/free-solid-svg-icons';
+import {
+  faXmark,
+  faCircleCheck,
+  faCalendarDays,
+  faUser,
+  faExpand,
+  faImages,
+  faFilePdf,
+  faFileWord,
+  faGraduationCap,
+  faChevronLeft,
+  faChevronRight,
+  faPlay,
+  faMagnifyingGlass,
+  faBullseye,
+  faClapperboard,
+  faChartLine,
+  faArrowUpRightFromSquare,
+  faBuilding,
+  faBriefcase,
+  faLink,
+  faFilm,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faGoogleDrive } from '@fortawesome/free-brands-svg-icons';
 import { ProjectItem } from '../types';
 import { FullSizeImageModal } from './FullSizeImageModal';
+import HighlightVideoCard from './common/HighlightVideoCard';
 
 interface ProjectModalProps {
   project: ProjectItem | null;
@@ -86,6 +111,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   <span className={`rounded-full px-3 py-1 font-sans-clean text-xs font-bold uppercase ${badgeBg}`}>
                     {project.category}
                   </span>
+                  {project.agency && (
+                    <span className="flex items-center gap-1 rounded-full bg-[#FFE3E8] px-3 py-1 font-sans-clean text-xs font-bold text-[#F2789F]">
+                      <FontAwesomeIcon icon={faBuilding} className="h-3 w-3" />
+                      {project.agency}
+                    </span>
+                  )}
+                  {project.role && (
+                    <span className="flex items-center gap-1 rounded-full bg-[#E2EFE7] px-3 py-1 font-sans-clean text-xs font-bold text-[#2F523B]">
+                      <FontAwesomeIcon icon={faBriefcase} className="h-3 w-3" />
+                      {project.role}
+                    </span>
+                  )}
                   <span className="flex items-center gap-1 font-sans-clean text-xs font-semibold text-stone-500">
                     <FontAwesomeIcon icon={faUser} className="h-3.5 w-3.5" />
                     {project.client}
@@ -141,9 +178,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <div className="mt-4 overflow-y-auto pr-1 space-y-6">
               {/* Collages Side-by-Side Showcase Cards (Matching Reference Design) */}
               {hasCollages && project.collages && (
-                <div className={`grid gap-4 md:gap-5 mb-2 ${
-                  project.collages.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
-                }`}>
+                <div className={`grid gap-4 md:gap-5 mb-2 ${project.collages.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'
+                  }`}>
                   {project.collages.map((c, idx) => {
                     const isSelected = activeCollageIndex === idx;
                     const coverImg = c.images[0];
@@ -158,9 +194,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                           setActiveImageIndex(0);
                           openFullSizeWith(c.images, 0);
                         }}
-                        className={`group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer border-2 transition-all shadow-xl ${
-                          project.collages!.length === 1 ? 'aspect-[16/9]' : 'aspect-[4/3]'
-                        } ${isSelected
+                        className={`group relative w-full overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer border-2 transition-all shadow-xl ${project.collages!.length === 1 ? 'aspect-[16/9]' : 'aspect-[4/3]'
+                          } ${isSelected
                             ? 'border-[#78A587] ring-4 ring-[#78A587]/20 scale-[1.01]'
                             : 'border-stone-200/80 hover:border-stone-400'
                           }`}
@@ -295,8 +330,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                             }}
                             onClick={() => setActiveImageIndex(idx)}
                             className={`relative h-16 w-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all ${activeImageIndex === idx
-                                ? 'border-[#FF8DA1] scale-105 ring-2 ring-[#FF8DA1]/50 opacity-100'
-                                : 'border-transparent opacity-60 hover:opacity-100'
+                              ? 'border-[#FF8DA1] scale-105 ring-2 ring-[#FF8DA1]/50 opacity-100'
+                              : 'border-transparent opacity-60 hover:opacity-100'
                               }`}
                           >
                             {isVideo ? (
@@ -314,6 +349,275 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                       })}
                     </div>
                   )}
+                </div>
+              )}
+
+              {/* Key Performance Metrics Bar */}
+              {project.metrics && project.metrics.length > 0 && (
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {project.metrics.map((metric, mIdx) => (
+                    <div
+                      key={mIdx}
+                      className="rounded-2xl border border-stone-200/80 bg-white/95 p-3.5 text-center shadow-xs backdrop-blur-xs"
+                    >
+                      <span className="block font-sans-clean text-[11px] font-bold text-stone-400 uppercase tracking-wider">
+                        {metric.label}
+                      </span>
+                      <span className="mt-0.5 block font-editorial text-xl sm:text-2xl font-bold text-[#F2789F]">
+                        {metric.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Scope of Work (Công việc thực hiện) */}
+              {project.scopeOfWork && project.scopeOfWork.length > 0 && (
+                <div className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6 shadow-sm space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#FFE3E8] text-[#F2789F]">
+                      <FontAwesomeIcon icon={faBullseye} className="h-3.5 w-3.5" />
+                    </span>
+                    <h3 className="font-editorial text-xl font-bold text-stone-900">
+                      Công việc thực hiện (Scope of Work) ✦
+                    </h3>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                    {project.scopeOfWork.map((phase, pIdx) => {
+                      const phaseIcons = [faMagnifyingGlass, faBullseye, faClapperboard, faChartLine];
+                      const phaseColors = [
+                        'bg-[#E2EFE7] text-[#2F523B] border-[#78A587]/30',
+                        'bg-[#FFE3E8] text-[#D84C72] border-[#F2789F]/30',
+                        'bg-[#FFF0E5] text-[#A05118] border-[#FFA366]/30',
+                        'bg-[#E6F7F5] text-[#1D7870] border-[#52C0B6]/30',
+                      ];
+
+                      return (
+                        <div
+                          key={pIdx}
+                          className="rounded-2xl border border-stone-200/60 bg-[#FAF8F5]/80 p-4 transition-all hover:border-stone-300 hover:shadow-xs"
+                        >
+                          <div className="flex items-center gap-2 mb-2.5">
+                            <span
+                              className={`flex h-6 w-6 items-center justify-center rounded-full border text-xs font-bold ${phaseColors[pIdx % 4]
+                                }`}
+                            >
+                              <FontAwesomeIcon icon={phaseIcons[pIdx % 4]} className="h-2.5 w-2.5" />
+                            </span>
+                            <h4 className="font-editorial text-sm font-bold text-stone-800">
+                              {phase.category}
+                            </h4>
+                          </div>
+
+                          <ul className="space-y-1.5 pl-1">
+                            {phase.tasks.map((task, tIdx) => (
+                              <li
+                                key={tIdx}
+                                className="flex items-start gap-2 font-sans-clean text-xs leading-relaxed text-stone-600"
+                              >
+                                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#F2789F] shrink-0" />
+                                <span>{task}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* External Deliverables & Links (Facebook & Google Drive) */}
+              {project.externalLinks && project.externalLinks.length > 0 && (
+                <div className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6 shadow-sm space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#E6F7F5] text-[#52C0B6]">
+                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3.5 w-3.5" />
+                      </span>
+                      <h3 className="font-editorial text-xl font-bold text-stone-900">
+                        Sản phẩm &amp; Liên kết triển khai thực tế 🚀
+                      </h3>
+                    </div>
+                    <span className="font-sans-clean text-xs font-bold text-stone-400">
+                      {project.externalLinks.length} Links
+                    </span>
+                  </div>
+
+                  {/* Facebook Posts */}
+                  {project.externalLinks.some((l) => l.platform === 'facebook') && (
+                    <div>
+                      <h4 className="mb-2.5 flex items-center gap-1.5 font-sans-clean text-xs font-bold uppercase text-[#1877F2]">
+                        <FontAwesomeIcon icon={faFacebook} className="h-3.5 w-3.5" />
+                        Bài viết trên Facebook
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        {project.externalLinks
+                          .filter((l) => l.platform === 'facebook')
+                          .map((item, idx) => (
+                            <a
+                              key={idx}
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group/link flex items-center justify-between rounded-xl border border-blue-100 bg-[#F0F5FF]/70 px-3.5 py-2.5 transition-all hover:bg-[#1877F2] hover:text-white hover:shadow-md"
+                            >
+                              <div className="flex items-center gap-2 min-w-0">
+                                <FontAwesomeIcon
+                                  icon={faFacebook}
+                                  className="h-4 w-4 text-[#1877F2] group-hover/link:text-white shrink-0"
+                                />
+                                <span className="truncate font-sans-clean text-xs font-semibold text-stone-800 group-hover/link:text-white">
+                                  {item.label}
+                                </span>
+                              </div>
+                              <FontAwesomeIcon
+                                icon={faArrowUpRightFromSquare}
+                                className="h-3 w-3 text-stone-400 group-hover/link:text-white shrink-0 ml-2"
+                              />
+                            </a>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Dedicated Short-Form Video Reels Player (Khung 9:16 Chuẩn Reels/TikTok & Native Player) */}
+              {project.videoClips && project.videoClips.length > 0 && (
+                <div className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6 shadow-sm space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#FFE3E8] text-[#F2789F]">
+                        <FontAwesomeIcon icon={faFilm} className="h-3.5 w-3.5" />
+                      </span>
+                      <div>
+                        <h3 className="font-editorial text-xl font-bold text-stone-900">
+                          Short-form Video Reels (Xem Trực Tiếp) 🎬
+                        </h3>
+                        <p className="font-sans-clean text-xs text-stone-500">
+                          {project.videoClips.length} video ngắn sản xuất thực chiến — trải nghiệm khung điện thoại 9:16 chuẩn Reels/TikTok
+                        </p>
+                      </div>
+                    </div>
+                    <span className="self-start sm:self-auto rounded-full bg-[#E2EFE7] px-3 py-1 font-sans-clean text-xs font-bold text-[#2F523B]">
+                      {project.videoClips.length} Videos
+                    </span>
+                  </div>
+
+                  {/* Responsive Grid of Video Reel Cards */}
+                  <div
+                    className={`grid gap-5 ${
+                      project.videoClips.length <= 2
+                        ? 'grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto'
+                        : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
+                    }`}
+                  >
+                    {project.videoClips.map((clip, cIdx) => {
+                      const isGoogleDriveOrLocal = Boolean(
+                        clip.localVideoUrl ||
+                          clip.platform === 'google-drive' ||
+                          clip.embedUrl?.includes('drive.google.com') ||
+                          clip.videoUrl.includes('drive.google.com')
+                      );
+
+                      if (isGoogleDriveOrLocal) {
+                        return (
+                          <HighlightVideoCard
+                            key={clip.id || cIdx}
+                            index={cIdx + 1}
+                            title={clip.title}
+                            subtitle={clip.subtitle}
+                            channelName={clip.channelName || 'Quốc Phong Hair Salon'}
+                            channelHandle={clip.channelHandle || '@quocphonghairsalon'}
+                            platform="google-drive"
+                            videoUrl={clip.videoUrl}
+                            localVideoUrl={clip.localVideoUrl}
+                            image={clip.image}
+                            stats={clip.stats}
+                            duration={clip.duration || '00:00/00:26'}
+                            viewsBadge={clip.viewsBadge}
+                          />
+                        );
+                      }
+
+                      // Facebook Reels (e.g. Savax Luxury)
+                      const isFbReel = Boolean(
+                        clip.embedUrl?.includes('facebook.com') ||
+                          clip.videoUrl.includes('facebook.com')
+                      );
+
+                      return (
+                        <div
+                          key={clip.id || cIdx}
+                          className="group/reel relative rounded-2xl border border-stone-200 bg-[#FAF8F5] p-3.5 shadow-xs hover:shadow-md transition-all hover:border-pink-300 flex flex-col justify-between"
+                        >
+                          <div className="flex items-center justify-between gap-2 pb-2.5 px-0.5 border-b border-stone-200/60 mb-3">
+                            <div className="flex items-center gap-2 min-w-0">
+                              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-stone-900 text-white text-[11px] sm:text-xs font-black flex items-center justify-center shrink-0">
+                                {cIdx + 1}
+                              </span>
+                              <h4 className="font-editorial font-bold text-xs sm:text-sm text-stone-900 tracking-tight truncate">
+                                {clip.channelName || project.title}
+                              </h4>
+                            </div>
+                            <div className="flex items-center gap-1.5 shrink-0">
+                              {clip.viewsBadge && (
+                                <span className="rounded-full bg-[#FFE3E8] px-2 py-0.5 font-sans-clean text-[10px] font-bold text-[#F2789F]">
+                                  {clip.viewsBadge}
+                                </span>
+                              )}
+                              {isFbReel && (
+                                <FontAwesomeIcon icon={faFacebook} className="text-sm text-[#1877F2]" />
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-black shadow-inner flex items-center justify-center">
+                            <iframe
+                              src={
+                                clip.embedUrl ||
+                                `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+                                  clip.videoUrl
+                                )}&show_text=0&autoplay=0`
+                              }
+                              className="h-full w-full border-0 rounded-xl"
+                              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                              allowFullScreen
+                              title={clip.title}
+                            />
+                          </div>
+
+                          <div className="mt-3 flex flex-col flex-1 justify-between gap-2">
+                            <div>
+                              <h5 className="font-editorial text-xs sm:text-sm font-bold text-stone-900 line-clamp-2 leading-snug">
+                                {clip.title}
+                              </h5>
+                              {clip.subtitle && (
+                                <p className="mt-1 font-sans-clean text-[11px] text-stone-500 line-clamp-2">
+                                  {clip.subtitle}
+                                </p>
+                              )}
+                            </div>
+
+                            <div className="pt-2 border-t border-stone-200/60">
+                              <a
+                                href={clip.videoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full py-2 px-3 bg-[#111827] hover:bg-black text-white rounded-xl font-sans-clean font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all shadow-xs hover:shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                              >
+                                <FontAwesomeIcon icon={faFacebook} className="text-[#1877F2] text-xs" />
+                                <span>MỞ TRÊN FACEBOOK</span>
+                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[9px] opacity-80" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
 

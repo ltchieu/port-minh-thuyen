@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faChevronLeft, faChevronRight, faExpand, faCompress, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faGoogleDrive } from '@fortawesome/free-brands-svg-icons';
 
 interface FullSizeImageModalProps {
   isOpen: boolean;
@@ -130,6 +131,18 @@ export const FullSizeImageModal: React.FC<FullSizeImageModalProps> = ({
                 autoPlay
                 className="max-h-[75vh] max-w-[90vw] object-contain rounded-xl shadow-2xl border border-white/10"
               />
+            ) : images[currentIndex]?.includes('drive.google.com') ? (
+              <iframe
+                src={
+                  images[currentIndex].includes('/preview')
+                    ? images[currentIndex]
+                    : `https://drive.google.com/file/d/${images[currentIndex].match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/)?.[1] || ''}/preview`
+                }
+                className="h-[75vh] w-[90vw] max-w-2xl rounded-xl shadow-2xl border border-white/10"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="Google Drive Video"
+              />
             ) : (
               <img
                 src={images[currentIndex]}
@@ -169,6 +182,8 @@ export const FullSizeImageModal: React.FC<FullSizeImageModalProps> = ({
           >
             {images.map((img, idx) => {
               const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(img);
+              const isDrive = img?.includes('drive.google.com');
+
               return (
                 <button
                   key={idx}
@@ -188,6 +203,10 @@ export const FullSizeImageModal: React.FC<FullSizeImageModalProps> = ({
                       <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                         <FontAwesomeIcon icon={faPlay} className="h-3 w-3 text-white drop-shadow-md" />
                       </div>
+                    </div>
+                  ) : isDrive ? (
+                    <div className="relative h-full w-full bg-stone-900 flex items-center justify-center">
+                      <FontAwesomeIcon icon={faGoogleDrive} className="h-6 w-6 text-[#34A853]" />
                     </div>
                   ) : (
                     <img src={img} alt={`Thumbnail ${idx + 1}`} referrerPolicy="no-referrer" className="h-full w-full object-cover" />

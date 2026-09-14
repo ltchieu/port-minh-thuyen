@@ -1,633 +1,344 @@
 import { ProjectItem } from '../types/projects';
 
 export const projectsData: ProjectItem[] = [
-  // PART 1: Personal Projects & Quick Briefs
   {
-    id: "proj-marketer-contest",
-    title: "Marketer Contest — Insight Oracle (Round 1)",
-    category: "Campaign Strategy",
-    client: "Marketer Contest / Insight Oracle",
-    year: "2026",
-    coverImage: "/images/Marketercontest/IMG_5952.webp",
-    galleryImages: [
-      "/images/Marketercontest/IMG_5952.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/1.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/2.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/3.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/4.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/5.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/6.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/7.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/8.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/9.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/10.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/11.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/12.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/13.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/14.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/15.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/16.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/17.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/18.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/19.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/20.webp",
-      "/images/Marketercontest/M490_InsightOracle_Round01/21.webp"
-    ],
-    badgeColor: "tiffany",
-    summary: "Marketing contest submission deck for Insight Oracle Round 01, featuring target consumer research, strategic positioning, key messages, and creative execution.",
-    concept: "Delivering a data-driven yet visually captivating campaign proposal that connects consumer insights with brand positioning.",
-    challenge: "Synthesizing market research into an engaging 21-slide strategic presentation under competitive competition deadlines.",
-    results: [
-      "21-slide comprehensive strategic contest deck",
-      "In-depth target audience profiling & market insights",
-      "Creative brand strategy & multi-channel execution plan"
-    ],
-    tags: ["MarketerContest", "InsightOracle", "CampaignStrategy", "MarketingDeck", "MarketResearch"],
-    featured: true,
-    projectType: "personal"
-  },
-  {
-    id: "qb-01",
-    title: "Quick Brief 1: “Our Future” - Library Pride Writing and Art Competition",
-    category: "Campaign Strategy",
-    client: "RMIT Library Pride / Wear It Purple Day",
-    year: "2026",
-    logo: "/experience/rmit.png",
-    coverImage: "/images/quick-brief-01/image1.avif",
-    galleryImages: [
-      "/images/quick-brief-01/image1.avif"
-    ],
-    badgeColor: "pink",
-    summary: "A purple-dominant fashion poster campaign celebrating and supporting the LGBTQIA+ community through fashion as a universal vehicle of personal expression.",
-    concept: "Choosing a purple poster combined with fashion elements aims to celebrate and support the LGBTQIA+ community in a creative and visually compelling way. Purple is the official color of 'Wear It Purple Day,' symbolizing pride, spirit, and unity for LGBTQIA+ youth. Fashion was chosen as the central vehicle because it is a universal form of personal expression—allowing people to showcase their identity, uniqueness, and confidence, which are key aspects of embracing diversity and individuality.",
-    challenge: "Visual Appeal & Inclusivity: The dominant use of purple directly aligns with 'Wear It Purple Day,' making the message clear and instantly recognizable. Incorporating fashion elements adds a modern, youthful appeal that resonates with the creative RMIT community.",
-    results: [
-      "Aligned directly with official 'Wear It Purple Day' brand identity",
-      "Youthful, fashion-forward visual appeal for RMIT creative students",
-      "Promoted LGBTQIA+ pride, diversity, and self-confidence"
-    ],
-    tags: ["WearItPurple", "LGBTQIA+", "RMITLibrary", "FashionPoster", "ArtDirection"],
-    featured: true,
-    projectType: "personal"
-  },
-  {
-    id: "qb-03",
-    title: "Quick Brief 03: LEGO – Build the World You Imagine",
-    category: "Brand Identity",
-    client: "LEGO Group",
-    year: "2025",
-    logo: "/images/quick-brief-03/lego-2.svg",
-    coverImage: "/images/quick-brief-03/img1.avif",
-    galleryImages: [
-      "/images/quick-brief-03/img1.avif",
-      "/images/quick-brief-03/img2.avif",
-      "/images/quick-brief-03/img3.avif",
-      "/images/quick-brief-03/img4.avif",
-      "/images/quick-brief-03/img5.avif",
-      "/images/quick-brief-03/img6.avif",
-      "/images/quick-brief-03/img7.avif",
-      "/images/quick-brief-03/img8.avif",
-      "/images/quick-brief-03/img9.avif",
-      "/images/quick-brief-03/img10.avif",
-      "/images/quick-brief-03/img11.avif"
-    ],
-    badgeColor: "orange",
-    summary: "An imaginative brand campaign strategy empowering creators of all ages to build their own worlds brick by brick through play-based storytelling.",
-    concept: "'Build the World You Imagine' focuses on unlocking endless creative potential. LEGO is presented not just as a construction toy, but as a boundless medium for self-expression, spatial problem-solving, and emotional storytelling.",
-    challenge: "Highlighting play-based learning and self-expression through vibrant primary & pastel color blocks, architectural set framing, and interactive play narratives.",
-    results: [
-      "11 curated campaign visuals and storyboard assets",
-      "Play-based learning & creative storytelling strategy",
-      "Multi-generational creative brand engagement"
-    ],
-    tags: ["LEGO", "BuildTheWorld", "CreativeDirection", "PlayBasedLearning", "CampaignStrategy"],
-    featured: true,
-    projectType: "personal"
-  },
-  {
-    id: "qb-05",
-    title: "Quick Brief 05: Choices Flooring – Room to Live",
-    category: "Campaign Strategy",
-    client: "Choices Flooring",
-    year: "2025",
-    logo: "/uni_projects/choice_flooring.png",
-    coverImage: "/images/quick-brief-05/imga1.avif",
-    galleryImages: [
-      "/images/quick-brief-05/imga1.avif"
-    ],
-    badgeColor: "tiffany",
-    summary: "Connecting interior flooring spaces with meaningful human moments, everyday warmth, and living comfort.",
-    concept: "'Room to Live' positions flooring as the foundation of every home story. It highlights how natural textures, durable warmth, and inviting design support everyday moments.",
-    challenge: "Shifting consumer focus from functional utility to emotional resonance, showcasing interior spaces where family, relaxation, and creative living happen naturally.",
-    results: [
-      "Tactile and human-centered interior brand positioning",
-      "Emotional architecture applied to retail flooring solutions"
-    ],
-    tags: ["ChoicesFlooring", "RoomToLive", "InteriorDesign", "BrandPositioning", "WarmAesthetics"],
-    featured: true,
-    projectType: "personal"
-  },
-  {
-    id: "proj-tcj",
-    title: "The Crystal Journal Shop",
-    category: "Photography & Social Strategy",
-    client: "The Crystal Journal",
-    year: "2024",
-    logo: "/experience/theJoural.png",
-    coverImage: "/images/the-crystal-journal/high-engagement-posts/hinh-anh-caption-hashtag-tuong-tac-ok.webp",
-    galleryImages: [
-      "/images/the-crystal-journal/high-engagement-posts/hinh-anh-caption-hashtag-tuong-tac-ok.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5776.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5777.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5778.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5779.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5780.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5781.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5782.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5783.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5785.webp",
-      "/images/the-crystal-journal/high-engagement-posts/img_5786.webp",
-      "/images/the-crystal-journal/high-engagement-posts/anh-chup-man-hinh-2026-07-28-luc-14.38.15.webp",
-      "/images/the-crystal-journal/high-engagement-posts/anh-chup-man-hinh-2026-07-28-luc-14.38.27.webp",
-      "/images/the-crystal-journal/customer-feedback/feedbacks-don-ban-tu-khach-1.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5788.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5789.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5790.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5791.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5792.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5793.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5794.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5795.webp",
-      "/images/the-crystal-journal/customer-feedback/img_5796.webp"
-    ],
-    collages: [
-      {
-        id: "collage-high-interaction",
-        title: "High Interaction Social Media Posts",
-        badge: "High Engagement Organic Content",
-        description: "Photos posted on page along with high-interaction posts converting directly to orders without paid ads.",
-        images: [
-          "/images/the-crystal-journal/high-engagement-posts/hinh-anh-caption-hashtag-tuong-tac-ok.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5776.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5777.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5778.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5779.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5780.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5781.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5782.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5783.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5785.webp",
-          "/images/the-crystal-journal/high-engagement-posts/img_5786.webp",
-          "/images/the-crystal-journal/high-engagement-posts/anh-chup-man-hinh-2026-07-28-luc-14.38.15.webp",
-          "/images/the-crystal-journal/high-engagement-posts/anh-chup-man-hinh-2026-07-28-luc-14.38.27.webp"
-        ]
-      },
-      {
-        id: "collage-customer-feedback",
-        title: "Customer Feedback from Self-Sold Orders",
-        badge: "Organic Order Feedbacks",
-        description: "Screenshots of customer chat reviews, purchase satisfaction, and organic sales proof.",
-        images: [
-          "/images/the-crystal-journal/customer-feedback/feedbacks-don-ban-tu-khach-1.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5788.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5789.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5790.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5791.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5792.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5793.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5794.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5795.webp",
-          "/images/the-crystal-journal/customer-feedback/img_5796.webp"
-        ]
-      }
-    ],
-    badgeColor: "green",
-    summary: "E-commerce brand direction, commercial product photography, and organic social content strategy driving natural customer conversions without paid advertising.",
-    concept: "Creating an ethereal, spiritual brand identity combining macro crystal photography, tailored captions, hashtag strategies, and direct organic buyer engagement.",
-    challenge: "Establishing a high-converting visual identity in a niche market by producing organic high-interaction posts and leveraging authentic customer feedback to drive sales.",
-    finalExecution: "High-Interaction Organic Content & Organic Sales Customer Feedbacks",
-    rationale: "Organic content strategy combining macro photography, caption copywriting, and social proof through authentic customer chat testimonials.",
-    results: [
-      "High-Engagement Page Posts: High organic interaction & conversions without paid ads",
-      "Organic Customer Feedbacks: 10+ documented positive chat reviews & repeat sales",
-      "Revenue Generation: Help increase order volume by approximately 30-40% per week compared to previous order volumes"
-    ],
-    tags: ["OrganicStrategy", "ProductPhotography", "SocialMediaConversions", "CustomerFeedback", "ECommerce"],
-    featured: true,
-    projectType: "personal"
-  },
-  {
-    id: "proj-wgac",
-    title: "Who Gives A Crap – Good for your bum, great for the world",
-    category: "Brand Identity",
-    client: "Who Gives A Crap",
-    year: "2025",
-    logo: "/images/who-gives-a-crap/who-give-a-crap-logo.png",
-    coverImage: "/images/who-gives-a-crap/imag1.avif",
-    galleryImages: [
-      "/images/who-gives-a-crap/imag1.avif",
-      "/images/who-gives-a-crap/imag2.avif",
-      "/images/who-gives-a-crap/imag3.avif",
-      "/images/who-gives-a-crap/imag4.avif",
-      "/images/who-gives-a-crap/imag5.avif",
-      "/images/who-gives-a-crap/MeWithPitchngAtTBWAforWhoGivesACrap.webp"
-    ],
-    imageCaptions: {
-      "/images/who-gives-a-crap/MeWithPitchngAtTBWAforWhoGivesACrap.webp": "Me pitching at TBWA for Who Gives A Crap"
-    },
-    badgeColor: "orange",
-    summary: "Playful, eco-conscious creative campaign strategy turning everyday toilet paper into a joyful force for global sanitation funding.",
-    concept: "Who Gives A Crap donates 50% of profits to help build toilets worldwide. The campaign pairs bold, colorful wrapper pattern designs with cheeky, irreverent copywriting that makes sustainability fun and un-boring.",
-    challenge: "Engaging consumers with an everyday commodity product through humor, bold typography, and impactful eco-storytelling.",
-    results: [
-      "5 high-impact visual campaign concepts & wrappers",
-      "Humorous and memorable brand messaging strategy",
-      "Purpose-driven advertising connecting sales with sanitation funding"
-    ],
-    tags: ["WhoGivesACrap", "EcoFriendly", "Copywriting", "BoldTypography", "PurposeBranding"],
-    featured: true,
-    projectType: "personal"
-  },
-  {
-    id: "proj-lfb",
-    title: "Local Fashion Brand Projects",
-    category: "Fashion Campaigns",
-    client: "Local Independent Fashion Labels",
+    id: "proj-quoc-phong-hair-salon",
+    title: "QUỐC PHONG HAIR SALON & HEAD SPA",
+    agency: "MT DIGITAL AGENCY",
+    client: "Quốc Phong Hair Salon",
+    category: "Hair & Beauty",
+    role: "Content Marketing",
     year: "2024 — 2025",
-    coverImage: "/images/local-fashion-brand-projects/img-7.avif",
+    logo: "/projects/MT_Digital/Quoc_phong_hair_salon/logo.svg",
+    coverImage: "/projects/MT_Digital/Quoc_phong_hair_salon/Thu hút.JPG",
     galleryImages: [
-      "/images/local-fashion-brand-projects/img-1.avif",
-      "/images/local-fashion-brand-projects/img-7.avif",
-      "/images/local-fashion-brand-projects/img-8.avif",
-      "/images/local-fashion-brand-projects/img-9.avif",
-      "/images/local-fashion-brand-projects/img-10.avif",
-      "/images/local-fashion-brand-projects/img-11.avif",
-      "/images/local-fashion-brand-projects/img-12.avif",
-      "/images/local-fashion-brand-projects/img-13.avif",
-      "/images/local-fashion-brand-projects/img-14.avif"
-    ],
-    badgeColor: "pink",
-    summary: "Art direction, editorial lookbooks, commercial photography, and short-form video reels for emerging independent fashion labels.",
-    concept: "Blending vintage romanticism with modern Asian Gen-Z minimalism. Utilizing soft lighting, natural movement, and audience-centric campaign visual direction.",
-    challenge: "Helping local boutique brands stand out against fast fashion through elevated editorial aesthetics and authentic social storytelling.",
-    results: [
-      "8+ editorial lookbook shoots completed",
-      "High engagement across Instagram & Xiaohongshu reels",
-      "Full end-to-end styling, casting, and color grading"
-    ],
-    tags: ["FashionEditorial", "Lookbook", "ArtDirection", "GenZStyling", "LocalFashion"],
-    featured: true,
-    projectType: "personal"
-  },
-
-  // PART 2: University Projects
-  {
-    id: "uni-01",
-    title: "Art Direction",
-    category: "Art Direction",
-    client: "RMIT Art Direction Studio",
-    year: "2025 — 2026",
-    logo: "/uni_projects/art-direction/uglyfood.png",
-    logos: [
-      "/uni_projects/art-direction/uglyfood.png",
-      "/uni_projects/art-direction/keepcup.png",
-      "/uni_projects/art-direction/veggi.png"
-    ],
-    grade: "Final Executions & Creative Rationale",
-    coverImage: "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-1.webp",
-    galleryImages: [
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-1.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-2.webp",
-      "/uni_projects/art-direction/image/choose-imperfect.mp4",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-5.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-6.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-7.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-8.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-9.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-10.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-11.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-14.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-16.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-18-executions.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-19-executions.webp",
-      "/uni_projects/art-direction/image/untitled-luc-00.57.23-17-thang-5-2026-21.webp"
-    ],
-    badgeColor: "pink",
-    summary: "Comprehensive art direction coursework featuring visual storyboarding, client brand identity, set design architecture, and rationale documentation.",
-    concept: "Creating intentional visual narratives across multi-channel campaign touchpoints. Blending aesthetic precision with strategic brand communication.",
-    challenge: "Translating client objectives into distinctive visual assets and poster executions.",
-    finalExecution: "Visual Assets, Video Campaign & Creative Rationale",
-    rationale: "Strategic visual storyboarding, color theory, and multi-channel campaign design rationale.",
-    results: [
-      "Client: RMIT Art Direction Studio",
-      "Final Execution: Visual Assets, 'CHOOSE IMPERFECT' Video Campaign & Rationale",
-      "Rationale: Strategic visual storyboarding & color theory"
-    ],
-    tags: ["ArtDirection", "VisualIdentity", "DesignRationale", "CampaignExecutions", "RMITStudio"],
-    pdfUrl: "/uni_projects/art-direction/assigment-2-art-di-hlpd-s3957038.pdf",
-    pdfLinks: [
-      {
-        label: "Assignment 1 — Creative Rationale (PDF)",
-        url: "/uni_projects/art-direction/assignment-1-oliviahoang-s3957038.pdf",
-        logo: "/uni_projects/art-direction/veggi.png"
-      },
-      {
-        label: "Assignment 2 — Campaign Executions Deck (PDF)",
-        url: "/uni_projects/art-direction/assigment-2-art-di-hlpd-s3957038.pdf",
-        logo: "/uni_projects/art-direction/keepcup.png"
-      }
-    ],
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-02",
-    title: "ICP (Integrated Communication Project)",
-    category: "Campaign Strategy",
-    client: "CAPITOL (Capitol Melbourne)",
-    year: "2025",
-    logo: "/uni_projects/Capitol.png",
-    grade: "Client Project Completion",
-    coverImage: "/uni_projects/icp/icp-final-presentation/1.webp",
-    galleryImages: [
-      "/uni_projects/icp/icp-final-presentation/1.webp",
-      "/uni_projects/icp/icp-final-presentation/2.webp",
-      "/uni_projects/icp/icp-final-presentation/4.webp",
-      "/uni_projects/icp/icp-final-presentation/6.webp",
-      "/uni_projects/icp/icp-final-presentation/7.webp",
-      "/uni_projects/icp/icp-final-presentation/8.webp",
-      "/uni_projects/icp/icp-final-presentation/9.webp",
-      "/uni_projects/icp/icp-final-presentation/10.webp",
-      "/uni_projects/icp/icp-final-presentation/11.webp",
-      "/uni_projects/icp/icp-final-presentation/12.webp",
-      "/uni_projects/icp/icp-final-presentation/14.webp",
-      "/uni_projects/icp/icp-final-presentation/16.webp",
-      "/uni_projects/icp/icp-final-presentation/18.webp"
-    ],
-    badgeColor: "tiffany",
-    summary: "Integrated Communication Project (ICP) for client CAPITOL, delivering audience research, student journey mapping, and final execution presentation decks.",
-    concept: "Positioning CAPITOL as a premier cultural hub through targeted digital touchpoints, experiential venue activations, and unified brand messaging.",
-    challenge: "Synthesizing complex audience insights into actionable media channels and presenting a cohesive client completion package.",
-    finalExecution: "19-Slide Client Presentation Deck & Experiential Activation Strategy",
-    results: [
-      "Client: CAPITOL (Capitol Melbourne)",
-      "Final Execution: 19-Slide Presentation Deck & Activation Strategy",
-      "PDF Link: Annotated Client Completion Document"
-    ],
-    tags: ["ICP", "CapitolClient", "IntegratedCampaign", "MediaStrategy", "RMITComm"],
-    pdfUrl: "/uni_projects/icp/annotated-a3_icp_comm2343_group_205_20capitol__20client_20project_20completion.pdf",
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-03",
-    title: "Internship & Comm",
-    category: "Strategic Communication",
-    client: "RMIT Library",
-    year: "2026",
-    logo: "/experience/rmit.png",
-    grade: "87% HD Score (High Distinction)",
-    coverImage: "/uni_projects/internship/screenshot-2026-08-01-112036.webp",
-    galleryImages: [
-      "/uni_projects/internship/screenshot-2026-08-01-112036.webp",
-      "/uni_projects/internship/screenshot-2026-08-01-112305.webp",
-      "/uni_projects/internship/screenshot-2026-08-01-112335.webp"
-    ],
-    badgeColor: "green",
-    summary: "Business Communication Plan for the Transnational Student Experience Project at RMIT Library, awarded an 87% High Distinction (HD) grade.",
-    concept: "Audience-centered communication strategy connecting diverse student personas with RMIT Library resources through digital signage, QR codes, and social campaigns.",
-    challenge: "Addressing library communication barriers through field observations, student interviews, and actionable communication strategies.",
-    keyInsights: "10+ Guerrilla Interviews & Communication Audit for Transnational Students",
-    results: [
-      "Grade: 87% HD Score (High Distinction)",
-      "Key Insights: 10+ Guerrilla Interviews & Student Journey Audit",
-      "Presentation PDF: RMIT Library Business Communication Plan"
-    ],
-    tags: ["RMITLibrary", "BusinessCommPlan", "HDScore87", "StudentInsights", "GuerrillaResearch"],
-    pdfUrl: "/uni_projects/internship/87_-hd-scoreannotated-assignment_201-_20s3957038-_20lephuongdunghoang-internshipandcomm.pdf",
-    pdfLinks: [
-      {
-        label: "87% HD Score — Annotated Assignment 1 (PDF)",
-        url: "/uni_projects/internship/87_-hd-scoreannotated-assignment_201-_20s3957038-_20lephuongdunghoang-internshipandcomm.pdf"
-      },
-      {
-        label: "RMIT Library Business Communication Plan (PDF)",
-        url: "/uni_projects/internship/rmit-library-business-communication-plan.pdf"
-      }
-    ],
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-04",
-    title: "Professional Communication Studio",
-    category: "Advertising Studio",
-    client: "RMIT Comm Studio (Group GP4)",
-    year: "2025",
-    logo: "/uni_projects/prod.png",
-    grade: "80% HD Score (High Distinction)",
-    coverImage: "/uni_projects/professional-comm-studio/80_-hd-score.webp",
-    galleryImages: [
-      "/uni_projects/professional-comm-studio/80_-hd-score.webp"
-    ],
-    badgeColor: "orange",
-    summary: "Major advertising studio submission achieving an 80% High Distinction (HD) score, covering client briefs, market research, positioning, and campaign rollout.",
-    concept: "High-impact advertising studio strategy translating brand value into engaging visual and text narratives.",
-    challenge: "Developing a complete major campaign submission deck under studio agency conditions.",
-    results: [
-      "Client: RMIT Professional Communication Studio (GP4)",
-      "Grade: 80% HD Score (High Distinction)",
-      "PDF Link: Major Project Submission GP4 Document"
-    ],
-    tags: ["CommStudio", "MajorProject", "HDScore80", "AdvertisingPitch", "RMITStudio"],
-    pdfUrl: "/uni_projects/professional-comm-studio/major_project_submission_gp4.pdf",
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-05",
-    title: "TV & Screen Culture",
-    category: "Screen Culture & Media",
-    client: "RMIT Media & Film Studio",
-    showName: "Married At First Sight (MAFS)",
-    year: "2025",
-    logo: "/uni_projects/MAFS.png",
-    grade: "91% HD & 80% HD Scores (High Distinction)",
-    coverImage: "/uni_projects/tv-screen-culture/91_-hd-score.webp",
-    galleryImages: [
-      "/uni_projects/tv-screen-culture/91_-hd-score.webp",
-      "/uni_projects/tv-screen-culture/80_-hd-score.webp"
-    ],
-    badgeColor: "pink",
-    summary: "Critical analysis of screen culture and reality TV storytelling focusing on 'Married At First Sight' (MAFS), earning top 91% HD and 80% HD distinction scores.",
-    concept: "Dissecting narrative structure, producer intervention, and psychological engagement behind popular reality TV format 'Married At First Sight'.",
-    challenge: "Evaluating screen culture tropes and framing academic media theory into accessible critical analysis.",
-    results: [
-      "Show Name: Married At First Sight (MAFS)",
-      "Grade: 91% HD & 80% HD Scores (High Distinction)",
-      "PDF Documents: TV & Screen Cultures Essay & Annotated Assessment 03"
-    ],
-    tags: ["TVScreenCulture", "MAFS", "HDScore91", "MediaAnalysis", "RealityTV"],
-    pdfUrl: "/uni_projects/tv-screen-culture/tv-screen-cultures.pdf",
-    pdfLinks: [
-      { label: "TV & Screen Cultures Essay & Presentation", url: "/uni_projects/tv-screen-culture/tv-screen-cultures.pdf" },
-      { label: "Annotated Assessment 03 Document", url: "/uni_projects/tv-screen-culture/annotated-lephuongdunghoang-s3957038-as03.pdf" }
-    ],
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-06",
-    title: "Storytelling for Advertising",
-    category: "Storytelling & Advertising",
-    client: "The Grampians Tourism / RMIT Advertising Studio",
-    year: "2025",
-    logo: "/uni_projects/The Grampians.png",
-    grade: "The Grampians Campaign Brief & Final Execution",
-    coverImage: "/uni_projects/storytelling-advertising/the-grampians-brief-1.webp",
-    galleryImages: [
-      "/uni_projects/storytelling-advertising/the-grampians-brief-1.webp",
-      "/uni_projects/storytelling-advertising/the-grampians-brief-2.webp"
-    ],
-    badgeColor: "tiffany",
-    summary: "Creative storytelling campaign for The Grampians, crafting narrative-driven advertising strategies to connect audiences with nature, culture, and outdoor experiences.",
-    concept: "Translating brand values into evocative visual storytelling for The Grampians tourism campaign, focusing on emotional resonance, scenic exploration, and heritage.",
-    challenge: "Framing multi-touchpoint advertising briefs into cohesive, story-led visual executions.",
-    finalExecution: "The Grampians Campaign Brief & Annotated Final Execution Strategy",
-    results: [
-      "Client: The Grampians Tourism / RMIT Advertising Studio",
-      "Final Execution: The Grampians Campaign Brief & Annotated Final Execution Strategy",
-      "PDF Link: Annotated Final Execution Document"
-    ],
-    tags: ["Storytelling", "TheGrampians", "AdvertisingStrategy", "CampaignDesign", "RMITStudio"],
-    pdfUrl: "/uni_projects/storytelling-advertising/annotated-final-execution.pdf",
-    pdfLinks: [
-      { label: "Annotated Final Execution Document", url: "/uni_projects/storytelling-advertising/annotated-final-execution.pdf" }
-    ],
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-pop-culture",
-    title: "Pop Culture Now Projects",
-    category: "Popular Culture & Media",
-    client: "RMIT Communication Studio (COMM2633)",
-    year: "2025",
-    grade: "Academic Research & Presentation Decks",
-    coverImage: "/uni_projects/Pop Culture Now Projects/Ảnh chụp Màn hình 2026-07-26 lúc 18.25.15.webp",
-    galleryImages: [
-      "/uni_projects/Pop Culture Now Projects/Ảnh chụp Màn hình 2026-07-26 lúc 18.25.15.webp",
-      "/uni_projects/Pop Culture Now Projects/Ảnh chụp Màn hình 2026-07-26 lúc 18.32.03.webp",
-      "/uni_projects/Pop Culture Now Projects/Ảnh chụp Màn hình 2026-07-26 lúc 18.32.41.webp",
-      "/uni_projects/Pop Culture Now Projects/Ảnh chụp Màn hình 2026-07-27 lúc 19.07.07.webp"
-    ],
-    badgeColor: "green",
-    summary: "Comprehensive research and strategic assignments analyzing aesthetic transformations, music trends, visual media framing, and cultural impacts.",
-    concept: "Exploring popular culture dynamics, aesthetic evolution, and contemporary media discourse through academic research papers and group presentation decks.",
-    challenge: "Deconstructing pop culture trends into clear academic insights and creative media analysis.",
-    results: [
-      "Client: RMIT Communication Studio (COMM2633)",
-      "Deliverables: Visual Aesthetic Transformation & Group Presentation Decks",
-      "PDF Downloads: 5 Annotated Academic & Group Papers"
-    ],
-    tags: ["PopCulture", "MediaStudies", "AestheticTransformation", "CulturalAnalysis", "RMIT"],
-    pdfUrl: "/uni_projects/Pop Culture Now Projects/annotated-Visual_20AestheticTransformation.pdf",
-    pdfLinks: [
-      { label: "Visual Aesthetic Transformation", url: "/uni_projects/Pop Culture Now Projects/annotated-Visual_20AestheticTransformation.pdf" },
-      { label: "Group Presentation Deck", url: "/uni_projects/Pop Culture Now Projects/annotated-3344_20Group_27s_20Presentation.pdf" },
-      { label: "Pop Culture Assignment 01", url: "/uni_projects/Pop Culture Now Projects/annotated-Assignment_201-_20Pop_20Culture.pdf" },
-      { label: "Music in Popular Culture", url: "/uni_projects/Pop Culture Now Projects/Week 8 music in popular culture.pdf" },
-      { label: "COMM2633 Assignment 01", url: "/uni_projects/Pop Culture Now Projects/annotated-COMM2633-ASN01-_20S3957038-LePhuongDungHoang.pdf" }
-    ],
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-precision-writing",
-    title: "Precision Writing",
-    category: "Copywriting & Academic Writing",
-    client: "RMIT Professional Communication",
-    year: "2025",
-    logo: "/uni_projects/matcha_kona.png",
-    grade: "Annotated Folio Submission",
-    coverImage: "/uni_projects/Precision writing/cover.webp",
-    galleryImages: [
-      "/uni_projects/Precision writing/cover.webp"
-    ],
-    badgeColor: "orange",
-    summary: "Mastering clear, impactful, and audience-targeted writing through an annotated professional folio covering editorial, strategic, and persuasive copy.",
-    concept: "Precision in communication—crafting tight, persuasive messaging, clear syntax, and strategic tone for diverse audience touchpoints.",
-    challenge: "Refining complex ideas into conciseness and clarity across multiple writing modules.",
-    results: [
-      "Client: RMIT Professional Communication",
-      "Deliverable: Precision Writing Annotated Folio Document",
-      "PDF Link: Annotated Folio PDF"
-    ],
-    tags: ["PrecisionWriting", "Copywriting", "Folio", "StrategicMessaging", "RMIT"],
-    pdfUrl: "/uni_projects/Precision writing/annotated-Folio.pdf",
-    pdfLinks: [
-      { label: "Precision Writing Annotated Folio PDF", url: "/uni_projects/Precision writing/annotated-Folio.pdf" }
-    ],
-    featured: true,
-    projectType: "business"
-  },
-  {
-    id: "uni-comm-foundation",
-    title: "Professional Communications Foundation",
-    category: "Strategic Research & Communication",
-    client: "RMIT Communication Studio (COMM2843)",
-    year: "2025",
-    grade: "Research Paper & Communication Strategy",
-    coverImage: "/uni_projects/Professional Communications Foundation/cover.webp",
-    galleryImages: [
-      "/uni_projects/Professional Communications Foundation/cover.webp",
-      "/uni_projects/Professional Communications Foundation/img1.JPG"
+      "/projects/MT_Digital/Quoc_phong_hair_salon/Thu hút.JPG",
+      "/projects/MT_Digital/Quoc_phong_hair_salon/Cntent caleder.jpg"
     ],
     imageCaptions: {
-      "/uni_projects/Professional Communications Foundation/img1.JPG": "Me with my teammates for ProfCom Foundation Projects"
+      "/projects/MT_Digital/Quoc_phong_hair_salon/Thu hút.JPG": "Hiệu quả tương tác thực chiến: Video Reels đạt 11K+ views, 9.6K views, 6.1K views và hàng loạt video tiếp cận tự nhiên.",
+      "/projects/MT_Digital/Quoc_phong_hair_salon/Cntent caleder.jpg": "Bản kế hoạch Content Calendar 3 tháng chi tiết: Định hướng Campaign Theme, 5 Content Pillars, Kế hoạch đăng bài đa nền tảng."
     },
-    badgeColor: "pink",
-    summary: "Foundational communication strategy and research paper analyzing social issues, including 'Illegal Labour Exportation' and communication frameworks.",
-    concept: "Building strong research methodologies, ethics, and strategic communication frameworks to address critical societal and transnational topics.",
-    challenge: "Investigating complex social issues and synthesizing findings into actionable communication insights.",
-    results: [
-      "Client: RMIT Communication Studio (COMM2843)",
-      "Topic: Illegal Labour Exportation & Strategic Communication Frameworks",
-      "PDF Link: Research Paper PDF Document"
+    videoClips: [
+      {
+        id: "clip-01",
+        title: "Clip 01: Quy trình tạo mẫu tóc chuyên nghiệp",
+        subtitle: "Quay dựng kỹ thuật cắt & uốn layer chuẩn salon",
+        videoUrl: "https://drive.google.com/file/d/10QZSRDAoPQL9s0z4gZWWdIzlUzr0WDlY/view?usp=drive_link",
+        localVideoUrl: "/videos/quoc_phong/video_01.mp4",
+        image: "/videos/quoc_phong/thumb_01.jpg",
+        channelName: "Quốc Phong Hair Salon",
+        channelHandle: "@quocphonghairsalon",
+        platform: "google-drive",
+        duration: "00:00/00:26",
+        viewsBadge: "Reels Hot",
+        stats: {
+          likes: "3,420",
+          comments: "148",
+          shares: "520",
+          views: "11K+"
+        }
+      },
+      {
+        id: "clip-02",
+        title: "Clip 02: Trải nghiệm khách hàng tại Salon",
+        subtitle: "Không gian salon & dịch vụ tư vấn tận tâm",
+        videoUrl: "https://drive.google.com/file/d/1J6V9VNRQF9Lh1LGQ2VaaIw06Pabea8-9/view?usp=sharing",
+        localVideoUrl: "/videos/quoc_phong/video_02.mp4",
+        image: "/videos/quoc_phong/thumb_02.jpg",
+        channelName: "Quốc Phong Hair Salon",
+        channelHandle: "@quocphonghairsalon",
+        platform: "google-drive",
+        duration: "00:00/00:28",
+        viewsBadge: "Viral 9.6K",
+        stats: {
+          likes: "2,890",
+          comments: "124",
+          shares: "430",
+          views: "9.6K"
+        }
+      },
+      {
+        id: "clip-03",
+        title: "Clip 03: Tư vấn & Chăm sóc tóc chuyên sâu",
+        subtitle: "Tư vấn cá nhân hóa theo từng chất tóc & form mặt",
+        videoUrl: "https://drive.google.com/file/d/11Jrn0w-Idg-PqK_Og7x-vKfJl1MbnnkM/view?usp=drive_link",
+        localVideoUrl: "/videos/quoc_phong/video_03.mp4",
+        image: "/videos/quoc_phong/thumb_03.jpg",
+        channelName: "Quốc Phong Hair Salon",
+        channelHandle: "@quocphonghairsalon",
+        platform: "google-drive",
+        duration: "00:00/00:15",
+        viewsBadge: "High Retention",
+        stats: {
+          likes: "1,940",
+          comments: "98",
+          shares: "280",
+          views: "6.1K"
+        }
+      },
+      {
+        id: "clip-04",
+        title: "Clip 04: Không gian & Dịch vụ Head Spa",
+        subtitle: "Dịch vụ gội đầu dưỡng sinh & thư giãn tại trung tâm Quận 1",
+        videoUrl: "https://drive.google.com/file/d/11JogF-f5mCd-TmoJ2z10420CvIeqqKK3/view?usp=drive_link",
+        localVideoUrl: "/videos/quoc_phong/video_04.mp4",
+        image: "/videos/quoc_phong/thumb_04.jpg",
+        channelName: "Quốc Phong Hair Salon",
+        channelHandle: "@quocphonghairsalon",
+        platform: "google-drive",
+        duration: "00:00/00:24",
+        viewsBadge: "Travel Friendly",
+        stats: {
+          likes: "2,150",
+          comments: "112",
+          shares: "360",
+          views: "4.8K"
+        }
+      },
+      {
+        id: "clip-05",
+        title: "Clip 05: Before & After Hair Transformation",
+        subtitle: "Video biến đổi diện mạo ấn tượng, thu hút khách quốc tế",
+        videoUrl: "https://drive.google.com/file/d/1Vf73cIBp0x0k4PJ58T5nxX9GS9GSdNd6/view?usp=drive_link",
+        localVideoUrl: "/videos/quoc_phong/video_05.mp4",
+        image: "/videos/quoc_phong/thumb_05.jpg",
+        channelName: "Quốc Phong Hair Salon",
+        channelHandle: "@quocphonghairsalon",
+        platform: "google-drive",
+        duration: "00:00/00:19",
+        viewsBadge: "Top 11K+ Views",
+        stats: {
+          likes: "3,850",
+          comments: "165",
+          shares: "640",
+          views: "11K+"
+        }
+      }
     ],
-    tags: ["CommFoundation", "ResearchPaper", "SocialImpact", "StrategicComm", "RMIT"],
-    pdfUrl: "/uni_projects/Professional Communications Foundation/ILLEGAL LABOUR EXPORTATION.pdf",
-    pdfLinks: [
-      { label: "Illegal Labour Exportation Research Paper", url: "/uni_projects/Professional Communications Foundation/ILLEGAL LABOUR EXPORTATION.pdf" }
+    badgeColor: "pink",
+    summary: "Đảm nhiệm vai trò Content Marketing tại MT Digital Agency, phụ trách toàn diện dự án Quốc Phong Hair Salon & Head Spa (68 Lý Tự Trọng): từ nghiên cứu thị trường Hair & Beauty, phân tích đối thủ, insight khách hàng, xây dựng Content Calendar 3 tháng, biên tập caption song ngữ, thiết kế visual, đến trực tiếp quay dựng short-form video và tối ưu hóa hiệu quả nội dung thu hút hàng chục nghìn lượt tương tác tự nhiên.",
+    concept: "Xây dựng hình ảnh một Hair Salon & Head Spa chuyên nghiệp, tận tâm và thân thiện với du khách (Travel-Friendly Experience). Định vị thương hiệu thông qua 5 Content Pillars vững chắc: Hair Transformation, Hair Education, Trust & Credibility, Travel-Friendly Experience và Lifestyle & Community.",
+    challenge: "Thị trường Hair & Beauty cạnh tranh khốc liệt tại khu vực trung tâm Quận 1. Cần tìm ra Content Angle độc đáo, kết hợp giữa sự tư vấn chân thực ('Every Great Hair Starts with Honest Consultation'), tay nghề kỹ thuật cao ('See Our Work. Know Our Quality') và uy tín với khách du lịch quốc tế ('Trusted by Travelers Around the World').",
+    scopeOfWork: [
+      {
+        category: "01. Nghiên cứu",
+        tasks: [
+          "Nghiên cứu thị trường Hair & Beauty",
+          "Phân tích đối thủ cạnh tranh & định vị thương hiệu",
+          "Nghiên cứu insight khách hàng địa phương và khách quốc tế",
+          "Theo dõi xu hướng nội dung tóc và làm đẹp thịnh hành"
+        ]
+      },
+      {
+        category: "02. Chiến lược nội dung",
+        tasks: [
+          "Xây dựng hệ thống 5 Content Pillars (Hair Transformation, Hair Education, Trust & Credibility, Travel-Friendly, Lifestyle)",
+          "Lên kế hoạch Content Calendar chi tiết theo tuần/tháng (3 tháng liên tục)",
+          "Xây dựng Content Angle & phát triển concept chuyên biệt theo từng dịch vụ salon",
+          "Xây dựng Hook giữ chân người xem và kịch bản Video Script cuốn hút"
+        ]
+      },
+      {
+        category: "03. Sản xuất & Triển khai",
+        tasks: [
+          "Viết content, biên tập caption song ngữ (Anh - Việt)",
+          "Thiết kế visual và chỉnh sửa hình ảnh thẩm mỹ, chỉn chu",
+          "Dựng và biên tập short-form video (Facebook Reels, TikTok, Instagram)",
+          "Adapt nội dung linh hoạt tối ưu hiển thị cho Facebook / TikTok / Instagram"
+        ]
+      },
+      {
+        category: "04. Đo lường & Tối ưu",
+        tasks: [
+          "Theo dõi hiệu quả realtime của từng bài đăng và video",
+          "Phân tích các content có performance tốt (lượt xem, tương tác, thời gian xem)",
+          "Điều chỉnh format, hook và content angle nhằm tối ưu lượt xem tự nhiên & quảng cáo"
+        ]
+      }
+    ],
+    metrics: [
+      { label: "Video cao nhất", value: "11K+ Views" },
+      { label: "Video nổi bật", value: "9.6K & 6.1K" },
+      { label: "Lộ trình Content", value: "3 Tháng Calendar" },
+      { label: "Độ tiếp cận", value: "100% Organic" }
+    ],
+    results: [
+      "Video Reels cao nhất đạt 11.000+ views tự nhiên cùng hàng loạt video đạt 9.6K, 6.1K, 4.8K, 4.1K views",
+      "Xây dựng hoàn chỉnh chiến lược và hệ thống Content Calendar 3 tháng bài bản với 5 Pillars cốt lõi",
+      "Sản xuất chuỗi short-form video thực tế về kỹ thuật tạo mẫu tóc và trải nghiệm khách hàng tại salon",
+      "Triển khai hệ thống bài viết song ngữ Anh - Việt chuyên nghiệp, thành công thu hút khách du lịch quốc tế",
+      "Tối ưu hóa nội dung giúp tăng trưởng mạnh mẽ lượt tương tác và tỷ lệ chuyển đổi khách hàng thực tế"
+    ],
+    externalLinks: [
+      {
+        label: "Bài viết Facebook: Dịch vụ & Trải nghiệm thực tế",
+        url: "https://www.facebook.com/share/p/1C8TqQJS4w/",
+        platform: "facebook"
+      },
+      {
+        label: "Bài viết Facebook: Kỹ thuật & Tay nghề chuyên môn",
+        url: "https://www.facebook.com/share/p/19YmFRuUKy/",
+        platform: "facebook"
+      },
+      {
+        label: "Facebook Reel: Video biến hình mẫu tóc nổi bật",
+        url: "https://www.facebook.com/share/r/1HJu4SGfUR/",
+        platform: "facebook"
+      },
+      {
+        label: "Bài viết Facebook: Khách hàng hài lòng & Tư vấn cá nhân hóa",
+        url: "https://www.facebook.com/share/p/19F9tPEakk/",
+        platform: "facebook"
+      }
+    ],
+    tags: [
+      "MTDigitalAgency",
+      "QuocPhongHairSalon",
+      "ContentMarketing",
+      "HairAndBeauty",
+      "ShortFormVideo",
+      "ContentCalendar",
+      "FacebookReels",
+      "BilingualContent"
     ],
     featured: true,
     projectType: "business"
   },
   {
-    id: "uni-client-management",
-    title: "Client Management",
-    category: "Client Relations & Strategy",
-    client: "RMIT Communication Studio (COMM2333)",
-    year: "2025",
-    grade: "Strategic Situation Resolution",
-    coverImage: "/uni_projects/Client Management/cover.webp",
+    id: "proj-savax-luxury-door",
+    title: "SAVAX LUXURY & SAVAX DOOR",
+    agency: "MT DIGITAL AGENCY",
+    client: "Savax Luxury & Savax Door",
+    category: "Luxury & Interior",
+    role: "Content Marketing & Video",
+    year: "2024 — 2025",
+    logo: "/projects/MT_Digital/SAVAX/logo.svg",
+    coverImage: "/projects/MT_Digital/SAVAX/IMG_0461.JPG",
     galleryImages: [
-      "/uni_projects/Client Management/cover.webp",
-      "/uni_projects/Client Management/Ảnh chụp Màn hình 2026-07-27 lúc 11.54.02.webp"
+      "/projects/MT_Digital/SAVAX/IMG_0461.JPG"
     ],
-    badgeColor: "tiffany",
-    summary: "Client Management strategy and conflict resolution coursework, providing actionable solutions for agency-client communications and stakeholder alignment.",
-    concept: "Navigating high-stakes agency client relationships, communication barriers, and strategic issue resolution under studio agency conditions.",
-    challenge: "Resolving complex client scenarios with diplomatic communication, clear deliverables, and strategic risk management.",
+    imageCaptions: {
+      "/projects/MT_Digital/SAVAX/IMG_0461.JPG": "Hiệu quả viral đột phá: Chuỗi thước phim Reels đạt mốc 56K+ views, 33K views, 22K views, 17K views — tối ưu tương tác tự nhiên vượt bậc cho thương hiệu gia công nội thất kim loại & cửa luxury."
+    },
+    videoClips: [
+      {
+        id: "savax-clip-01",
+        title: "Reel 01: Quy trình gia công nội thất kim loại cao cấp",
+        subtitle: "Công nghệ cơ khí chính xác inox 304 mạ vàng PVD",
+        videoUrl: "https://www.facebook.com/reel/2245162819574606",
+        embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2245162819574606&show_text=0",
+        driveUrl: "https://www.facebook.com/reel/2245162819574606",
+        viewsBadge: "Top 56K+ Views"
+      },
+      {
+        id: "savax-clip-02",
+        title: "Reel 02: Thiết kế & Thi công tủ trang sức cao cấp",
+        subtitle: "Kính cong siêu trong tàng hình & hệ đèn LED chuyên dụng",
+        videoUrl: "https://www.facebook.com/reel/1246896567527448",
+        embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1246896567527448&show_text=0",
+        driveUrl: "https://www.facebook.com/reel/1246896567527448",
+        viewsBadge: "Viral 33K"
+      },
+      {
+        id: "savax-clip-03",
+        title: "Reel 03: Giải pháp gia công công nghiệp & Cửa Luxury",
+        subtitle: "Độ hoàn thiện tinh xảo cho biệt thự & showroom",
+        videoUrl: "https://www.facebook.com/reel/1775433016800117",
+        embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1775433016800117&show_text=0",
+        driveUrl: "https://www.facebook.com/reel/1775433016800117",
+        viewsBadge: "Viral 22K"
+      },
+      {
+        id: "savax-clip-04",
+        title: "Reel 04: Chi tiết không gian trưng bày Savax Luxury",
+        subtitle: "Đẳng cấp không gian nội thất mạ vàng sang trọng",
+        videoUrl: "https://www.facebook.com/reel/3989921657970721",
+        embedUrl: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3989921657970721&show_text=0",
+        driveUrl: "https://www.facebook.com/reel/3989921657970721",
+        viewsBadge: "Viral 17K"
+      }
+    ],
+    badgeColor: "orange",
+    summary: "Đảm nhiệm vai trò Content Marketing & Video Production cho Savax Luxury & Savax Door tại MT Digital Agency. Phụ trách toàn diện chiến lược Social Media cho thương hiệu gia công nội thất kim loại cao cấp, tủ trưng bày tiệm kim hoàn luxury và cửa inox mạ vàng: từ nghiên cứu thị trường, đối thủ, xây dựng Content Direction, lên Content Calendar, sáng tạo ý tưởng và trực tiếp quay dựng short-form video đạt đỉnh 56.000+ views tự nhiên.",
+    concept: "Xây dựng định vị Savax là đơn vị tiên phong về giải pháp gia công và thi công nội thất kim loại cao cấp tại Việt Nam. Tôn vinh vẻ đẹp chuẩn mực luxury thông qua những góc quay cận cảnh tinh xảo: inox 304 mạ vàng PVD, kính uốn cong siêu trong tàng hình và tay nghề chế tác độc bản.",
+    challenge: "Ngành gia công cơ khí chính xác và nội thất kim loại cao cấp (B2B & High-End Retail) có đặc thù kỹ thuật khô khan. Thách thức lớn là chuyển hóa các công đoạn sản xuất, vật liệu phức tạp thành các thước phim ngắn cuốn hút, vừa thể hiện năng lực sản xuất vượt trội, vừa giữ chân người xem và kích thích tương tác đặt hàng từ các chủ tiệm trang sức và nhà thầu cao cấp.",
+    scopeOfWork: [
+      {
+        category: "01. Nghiên cứu & Định hướng",
+        tasks: [
+          "Nghiên cứu thị trường gia công inox & nội thất luxury",
+          "Phân tích đối thủ cạnh tranh trong phân khúc B2B & High-End Interior",
+          "Nghiên cứu sâu insight khách hàng (chủ tiệm kim hoàn, KTS, nhà thầu dự án)",
+          "Xây dựng khung định hướng nội dung (Content Direction) đồng bộ nhận diện"
+        ]
+      },
+      {
+        category: "02. Chiến lược nội dung",
+        tasks: [
+          "Lên kế hoạch Content Calendar chi tiết theo tuần/tháng",
+          "Phát triển Content Angle độc đáo theo từng dòng sản phẩm mũi nhọn",
+          "Lên ý tưởng kịch bản video ngắn nhấn mạnh giải pháp và chất lượng hoàn thiện",
+          "Thiết lập cấu trúc hook giữ chân người xem trong 3 giây đầu tiên"
+        ]
+      },
+      {
+        category: "03. Sản xuất & Triển khai",
+        tasks: [
+          "Lên ý tưởng và triển khai nội dung bài viết Social Media",
+          "Thiết kế và chỉnh sửa hình ảnh cơ bản theo tone màu sang trọng",
+          "Trực tiếp quay dựng và biên tập short-form video (Facebook Reels)",
+          "Adapt visual linh hoạt phù hợp với nhận diện thương hiệu cao cấp"
+        ]
+      },
+      {
+        category: "04. Đo lường & Tối ưu",
+        tasks: [
+          "Theo dõi realtime hiệu quả lượt xem và tương tác của từng thước phim",
+          "Phân tích các nội dung có performance tốt đạt hàng chục nghìn lượt xem",
+          "Tối ưu nội dung, góc máy và hook nhằm tăng lượt xem tự nhiên và tương tác khách hàng"
+        ]
+      }
+    ],
+    metrics: [
+      { label: "Video cao nhất", value: "56K+ Views" },
+      { label: "Chuỗi Reels Viral", value: "33K & 22K" },
+      { label: "Lộ trình Content", value: "Đa Kênh B2B" },
+      { label: "Độ tiếp cận", value: "100% Organic" }
+    ],
     results: [
-      "Client: RMIT Communication Studio (COMM2333)",
-      "Deliverable: Strategic Issue Resolution & Client Case Study",
-      "Media: Situation Analysis & Campaign Screenshots"
+      "Video Reels cao nhất đạt kỷ lục 56.000+ views tự nhiên cùng chuỗi video đạt 33K, 22K, 17K, 13K views",
+      "Xây dựng hoàn chỉnh Content Direction và Content Calendar chuyên nghiệp cho Savax Luxury & Savax Door",
+      "Sản xuất các thước phim ngắn chất lượng cao làm nổi bật kỹ thuật kính cong tàng hình & inox mạ vàng PVD",
+      "Triển khai bài viết Social Media đồng bộ hình ảnh visual sang trọng, định vị vững chắc thương hiệu luxury",
+      "Tối ưu nội dung giúp tăng trưởng mạnh mẽ lượt xem tự nhiên và thu hút tệp khách hàng tiềm năng cao cấp"
     ],
-    tags: ["ClientManagement", "AgencyStrategy", "ConflictResolution", "StakeholderComm", "RMIT"],
-    pdfUrl: "/uni_projects/Client Management/COMM2333 (chỉ upload phần giải quyết tình huống)-AS01-S3957038-LePhuongDungHoang.docx",
-    pdfLinks: [
-      { label: "COMM2333 Client Management Solution (.docx)", url: "/uni_projects/Client Management/COMM2333 (chỉ upload phần giải quyết tình huống)-AS01-S3957038-LePhuongDungHoang.docx" }
+    externalLinks: [
+      {
+        label: "Bài viết Facebook: Giải pháp thi công tủ trang sức cao cấp",
+        url: "https://www.facebook.com/share/p/1HB3ucM5xw/",
+        platform: "facebook"
+      },
+      {
+        label: "Bài viết Facebook: Thiết kế & Gia công kim loại nội thất",
+        url: "https://www.facebook.com/share/p/1HSWvewkt2/",
+        platform: "facebook"
+      },
+      {
+        label: "Bài viết Facebook: Không gian trưng bày trang sức Savax Luxury",
+        url: "https://www.facebook.com/share/p/1GrUVC3TyR/",
+        platform: "facebook"
+      }
+    ],
+    tags: [
+      "MTDigitalAgency",
+      "SavaxLuxury",
+      "SavaxDoor",
+      "LuxuryInterior",
+      "ContentMarketing",
+      "ShortFormVideo",
+      "FacebookReels",
+      "MetalFurniture"
     ],
     featured: true,
     projectType: "business"
