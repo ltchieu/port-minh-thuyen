@@ -33,7 +33,10 @@ export default function App() {
           !parsed.hero ||
           parsed.hero.profileImage !== '/images/avatar.png' ||
           !parsed.experiences ||
-          !parsed.experiences.some((e: any) => e.company === 'MT DIGITAL AGENCY')
+          !parsed.experiences.some((e: any) => e.company === 'MT DIGITAL AGENCY') ||
+          !parsed.contact ||
+          parsed.contact.email !== 'kimthuyen014@gmail.com' ||
+          parsed.contact.phone !== '0913104395'
         ) {
           return initialPortfolioData;
         }

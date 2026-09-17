@@ -1,116 +1,211 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLocationDot, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faTiktok, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import {
+  faEnvelope,
+  faPhone,
+  faCopy,
+  faCheck,
+  faWandMagicSparkles,
+  faLocationDot,
+  faHandshake
+} from '@fortawesome/free-solid-svg-icons';
 import { PortfolioData } from '../types';
 import { CornerSticker } from './common/CuteStickers';
+import { PolaroidCard3D } from './common/PolaroidCard3D';
 
 interface ContactSectionProps {
   data: PortfolioData['contact'];
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
-  const getSocialIcon = (platform: string, iconKey?: string) => {
-    const key = `${platform} ${iconKey || ''}`.toLowerCase();
-    if (key.includes('instagram')) return faInstagram;
-    if (key.includes('tiktok') || key.includes('video')) return faTiktok;
-    if (key.includes('linkedin')) return faLinkedin;
-    if (key.includes('whatsapp')) return faWhatsapp;
-    return faGlobe;
+  const [copiedPhone, setCopiedPhone] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const phone = data.phone || "0913104395";
+  const email = data.email || "kimthuyen014@gmail.com";
+
+  const handleCopy = (text: string, type: 'phone' | 'email') => {
+    navigator.clipboard.writeText(text);
+    if (type === 'phone') {
+      setCopiedPhone(true);
+      setTimeout(() => setCopiedPhone(false), 2000);
+    } else {
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    }
   };
 
   return (
-    <section id="contact" className="relative py-16 md:py-24">
+    <section id="contact" className="relative py-16 md:py-24 overflow-hidden">
       {/* Background Decor */}
-      <div className="pointer-events-none absolute inset-0 bg-paper-texture opacity-80"></div>
+      <div className="pointer-events-none absolute inset-0 bg-paper-texture opacity-80" />
 
-      <div className="relative mx-auto max-w-4xl px-4 md:px-6">
-        {/* Title */}
+      <div className="relative mx-auto max-w-6xl px-4 md:px-6">
+        {/* Section Title Header */}
         <div className="mb-12 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="font-editorial text-5xl font-black italic text-stone-900 sm:text-6xl lg:text-7xl">
-              {data.heading}
-            </h2>
-            <span className="inline-block mt-2 font-handwritten text-2xl font-bold text-[#F2789F]">
-              thank you for stopping by! 🌸
+            {/* Cute handwritten pill badge */}
+            <span className="inline-block rounded-full bg-[#FFE3E8] px-4 py-1 font-handwritten text-xl font-bold text-[#F2789F] rotate-1">
+              get in touch &amp; collaborate ✦
             </span>
+
+            <h2 className="mt-2 font-fluffy text-4xl font-extrabold text-fluffy-pink md:text-5xl lg:text-6xl">
+              LET'S CONNECT
+            </h2>
+
+            <p className="mt-2 font-editorial text-lg italic text-stone-600 max-w-xl mx-auto">
+              thank you for stopping by! 🌸
+            </p>
           </motion.div>
         </div>
 
-        {/* Full Width Letter Envelope Note */}
+        {/* Scrapbook Envelope Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative w-full rounded-3xl border-2 border-dashed border-[#FF8DA1]/50 bg-white p-6 shadow-xl md:p-10 lg:p-12"
+          className="relative w-full rounded-3xl border-2 border-dashed border-[#FF8DA1]/50 bg-white/95 p-6 sm:p-8 lg:p-12 shadow-2xl shadow-stone-200/60 backdrop-blur-md overflow-visible"
         >
-          {/* Corner Sticker: Planet Pastel */}
+          {/* Top Corner Sticker: Planet Pastel */}
           <CornerSticker type="planet_pastel" position="top-right" size={76} rotation={14} />
 
-          {/* Pink Washi Tape */}
-          <div className="washi-tape-pink absolute -top-3 left-8 h-6 w-36 -rotate-1"></div>
+          {/* Washi Tape Accent */}
+          <div className="washi-tape-pink absolute -top-3 left-10 h-6 w-36 -rotate-1 z-10" />
 
-          <h3 className="font-editorial text-2xl font-bold text-stone-900 md:text-3xl">
-            {data.noteTitle}
-          </h3>
-
-          <p className="mt-4 font-editorial text-lg leading-relaxed text-stone-700 italic">
-            "{data.noteBody}"
-          </p>
-
-          <div className="mt-8 flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-6 border-t border-stone-100">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-              <div className="flex items-center gap-2.5 font-sans-clean text-sm font-semibold text-stone-800">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFE3E8] text-[#F2789F]">
-                  <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Column: Letter Note & Contact Information (7 Cols) */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#FFE3E8] text-[#F2789F]">
+                    <FontAwesomeIcon icon={faWandMagicSparkles} className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="font-sans-clean text-xs font-bold uppercase tracking-wider text-[#F2789F]">
+                    Thông tin liên hệ trực tiếp
+                  </span>
                 </div>
-                <a href={`mailto:${data.email}`} className="text-[#F2789F] hover:underline text-base font-bold">
-                  {data.email}
-                </a>
+
+                <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-stone-900">
+                  {data.noteTitle || "Let's create something magical together ✨"}
+                </h3>
+
+                <p className="mt-3 font-editorial text-base sm:text-lg leading-relaxed text-stone-600 italic">
+                  "{data.noteBody || "Cảm ơn bạn đã ghé thăm portfolio của mình! Mình luôn sẵn sàng kết nối và đồng hành cùng các thương hiệu trong chiến lược Content Marketing, sản xuất Short-form Video & phát triển Social Media thực chiến."}"
+                </p>
               </div>
 
-              {data.worldwideEmail && (
-                <div className="flex items-center gap-2 font-sans-clean text-sm text-stone-700 sm:border-l sm:border-stone-200 sm:pl-3">
-                  <a href={`mailto:${data.worldwideEmail}`} className="text-stone-800 hover:text-[#F2789F] hover:underline text-sm font-bold flex items-center gap-1.5">
-                    <span>{data.worldwideEmail}</span>
-                    <span className="rounded-full bg-[#FFE3E8] px-2.5 py-0.5 font-handwritten text-xs font-bold text-[#F2789F]">
-                      Worldwide
-                    </span>
-                  </a>
+              {/* Contact Info Items (Styled matching the reference image) */}
+              <div className="space-y-3.5 pt-4 border-t border-stone-100">
+                {/* 1. Phone Item */}
+                <div className="group flex items-center justify-between gap-4 rounded-2xl border border-stone-200/90 bg-[#FAF8F5] p-3.5 sm:p-4 transition-all duration-300 hover:border-[#FF8DA1] hover:bg-white hover:shadow-md">
+                  <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+                    {/* Black Circle with Icon matching image */}
+                    <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-stone-900 text-white shadow-sm transition-transform group-hover:scale-105">
+                      <FontAwesomeIcon icon={faPhone} className="h-5 w-5" />
+                    </div>
+
+                    <div className="min-w-0">
+                      <span className="block font-sans-clean text-[10px] font-bold uppercase tracking-wider text-stone-400">
+                        Số điện thoại / Zalo
+                      </span>
+                      <a
+                        href={`tel:${phone}`}
+                        className="font-editorial text-lg sm:text-xl font-bold text-stone-900 hover:text-[#F2789F] transition-colors truncate block"
+                      >
+                        {phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(phone, 'phone')}
+                      title="Sao chép số điện thoại"
+                      className="flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3 py-1.5 font-sans-clean text-xs font-semibold text-stone-700 transition-all hover:bg-[#FFE3E8] hover:text-[#F2789F] hover:border-[#FF8DA1] cursor-pointer"
+                    >
+                      <FontAwesomeIcon icon={copiedPhone ? faCheck : faCopy} className="h-3.5 w-3.5 text-[#F2789F]" />
+                      <span className="hidden sm:inline">{copiedPhone ? 'Đã chép!' : 'Copy'}</span>
+                    </button>
+                    <a
+                      href={`tel:${phone}`}
+                      className="hidden sm:inline-flex items-center rounded-xl bg-stone-900 px-3 py-1.5 font-sans-clean text-xs font-bold text-white transition-all hover:bg-[#F2789F] cursor-pointer shadow-xs"
+                    >
+                      Gọi ngay
+                    </a>
+                  </div>
                 </div>
-              )}
+
+                {/* 2. Email Item */}
+                <div className="group flex items-center justify-between gap-4 rounded-2xl border border-stone-200/90 bg-[#FAF8F5] p-3.5 sm:p-4 transition-all duration-300 hover:border-[#FF8DA1] hover:bg-white hover:shadow-md">
+                  <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
+                    {/* Black Circle with Icon matching image */}
+                    <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full bg-stone-900 text-white shadow-sm transition-transform group-hover:scale-105">
+                      <FontAwesomeIcon icon={faEnvelope} className="h-5 w-5" />
+                    </div>
+
+                    <div className="min-w-0">
+                      <span className="block font-sans-clean text-[10px] font-bold uppercase tracking-wider text-stone-400">
+                        Email liên hệ
+                      </span>
+                      <a
+                        href={`mailto:${email}`}
+                        className="font-editorial text-base sm:text-xl font-bold text-stone-900 hover:text-[#F2789F] transition-colors truncate block"
+                      >
+                        {email}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(email, 'email')}
+                      title="Sao chép địa chỉ email"
+                      className="flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-3 py-1.5 font-sans-clean text-xs font-semibold text-stone-700 transition-all hover:bg-[#FFE3E8] hover:text-[#F2789F] hover:border-[#FF8DA1] cursor-pointer"
+                    >
+                      <FontAwesomeIcon icon={copiedEmail ? faCheck : faCopy} className="h-3.5 w-3.5 text-[#F2789F]" />
+                      <span className="hidden sm:inline">{copiedEmail ? 'Đã chép!' : 'Copy'}</span>
+                    </button>
+                    <a
+                      href={`mailto:${email}`}
+                      className="hidden sm:inline-flex items-center rounded-xl bg-stone-900 px-3 py-1.5 font-sans-clean text-xs font-bold text-white transition-all hover:bg-[#F2789F] cursor-pointer shadow-xs"
+                    >
+                      Gửi thư
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Location & Status Footer */}
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs font-sans-clean text-stone-500">
+                <div className="flex items-center gap-2">
+                  <FontAwesomeIcon icon={faLocationDot} className="h-3.5 w-3.5 text-[#52C0B6]" />
+                  <span>{data.location || "TP. Hồ Chí Minh"} • Sẵn sàng làm việc Remote &amp; On-site</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-[#E2EFE7] px-3 py-1 font-bold text-[#2F523B]">
+                  <FontAwesomeIcon icon={faHandshake} className="h-3 w-3 text-[#2F523B]" />
+                  <span>Open for Opportunities</span>
+                </div>
+              </div>
             </div>
 
-          </div>
-
-          {/* Social Links */}
-          <div className="mt-8 pt-6 border-t border-stone-100">
-            <p className="mb-4 font-sans-clean text-xs font-bold uppercase tracking-wider text-stone-400">
-              Social Media & Portfolios
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {data.socials.map((soc, idx) => {
-                const socialIcon = getSocialIcon(soc.platform, soc.icon);
-                return (
-                  <a
-                    key={idx}
-                    href={soc.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 rounded-full border border-stone-200 bg-stone-50 px-4 py-2 font-sans-clean text-xs font-semibold text-stone-700 transition-all hover:bg-[#FFE3E8] hover:text-[#F2789F] hover:border-[#FF8DA1] hover:shadow-sm"
-                  >
-                    <FontAwesomeIcon icon={socialIcon} className="h-4 w-4 text-[#F2789F]" />
-                    <span>{soc.platform}</span>
-                  </a>
-                );
-              })}
+            {/* Right Column: 3D Interactive Polaroid (5 Cols) */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
+              <PolaroidCard3D
+                imageSrc="/images/contact_img.png"
+                alt="Lê Thị Kim Thuyên"
+                name="Lê Thị Kim Thuyên"
+                caption="sáng tạo nội dung chạm cảm xúc ✦"
+                date="Saigon • 2026"
+              />
             </div>
           </div>
         </motion.div>
