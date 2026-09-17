@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="40" fill="#0C1B2A" />
+  <!-- Architectural Geometric Monogram TT -->
+  <g transform="translate(100, 78)">
+    <!-- Outer Glow / Accent Shape -->
+    <rect x="-38" y="-38" width="76" height="76" rx="16" fill="none" stroke="#2DD4BF" stroke-width="2" opacity="0.3" stroke-dasharray="4 4"/>
+    <!-- T 1 (Left / Foreground) -->
+    <path d="M-28 -24 H-2 V-16 H-11 V24 H-19 V-16 H-28 Z" fill="#2DD4BF" />
+    <!-- T 2 (Right / Accent) -->
+    <path d="M2 -24 H28 V-16 H19 V24 H11 V-16 H2 Z" fill="#F8FAFC" />
+    <!-- Golden Diamond Accent -->
+    <polygon points="0,-32 5,-27 0,-22 -5,-27" fill="#FBBF24"/>
+  </g>
+  <!-- Brand Text -->
+  <text x="100" y="146" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="3.5">TT GENESIS</text>
+  <text x="100" y="165" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="700" fill="#2DD4BF" text-anchor="middle" letter-spacing="2.5">REAL ESTATE</text>
+</svg>

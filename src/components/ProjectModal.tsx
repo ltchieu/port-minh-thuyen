@@ -428,63 +428,75 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </div>
               )}
 
-              {/* External Deliverables & Links (Facebook & Google Drive) */}
-              {project.externalLinks && project.externalLinks.length > 0 && (
-                <div className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6 shadow-sm space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#E6F7F5] text-[#52C0B6]">
-                        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3.5 w-3.5" />
-                      </span>
-                      <h3 className="font-editorial text-xl font-bold text-stone-900">
-                        Sản phẩm &amp; Liên kết triển khai thực tế 🚀
-                      </h3>
-                    </div>
-                    <span className="font-sans-clean text-xs font-bold text-stone-400">
-                      {project.externalLinks.length} Links
-                    </span>
-                  </div>
+              {/* External Deliverables & Links (Facebook Articles & Documentation) */}
+              {(() => {
+                // Filter out any reel links from externalLinks because they are displayed as interactive phone reels below
+                const nonReelLinks = (project.externalLinks || []).filter(
+                  (l) =>
+                    !l.label.toLowerCase().includes('reel') &&
+                    !l.url.includes('/r/') &&
+                    !l.url.includes('/reel/')
+                );
 
-                  {/* Facebook Posts */}
-                  {project.externalLinks.some((l) => l.platform === 'facebook') && (
-                    <div>
-                      <h4 className="mb-2.5 flex items-center gap-1.5 font-sans-clean text-xs font-bold uppercase text-[#1877F2]">
-                        <FontAwesomeIcon icon={faFacebook} className="h-3.5 w-3.5" />
-                        Bài viết trên Facebook
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        {project.externalLinks
-                          .filter((l) => l.platform === 'facebook')
-                          .map((item, idx) => (
-                            <a
-                              key={idx}
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="group/link flex items-center justify-between rounded-xl border border-blue-100 bg-[#F0F5FF]/70 px-3.5 py-2.5 transition-all hover:bg-[#1877F2] hover:text-white hover:shadow-md"
-                            >
-                              <div className="flex items-center gap-2 min-w-0">
-                                <FontAwesomeIcon
-                                  icon={faFacebook}
-                                  className="h-4 w-4 text-[#1877F2] group-hover/link:text-white shrink-0"
-                                />
-                                <span className="truncate font-sans-clean text-xs font-semibold text-stone-800 group-hover/link:text-white">
-                                  {item.label}
-                                </span>
-                              </div>
-                              <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}
-                                className="h-3 w-3 text-stone-400 group-hover/link:text-white shrink-0 ml-2"
-                              />
-                            </a>
-                          ))}
+                if (nonReelLinks.length === 0) return null;
+
+                return (
+                  <div className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6 shadow-sm space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#E6F7F5] text-[#52C0B6]">
+                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3.5 w-3.5" />
+                        </span>
+                        <h3 className="font-editorial text-xl font-bold text-stone-900">
+                          Sản phẩm &amp; Liên kết triển khai thực tế 🚀
+                        </h3>
                       </div>
+                      <span className="font-sans-clean text-xs font-bold text-stone-400">
+                        {nonReelLinks.length} Links
+                      </span>
                     </div>
-                  )}
-                </div>
-              )}
 
-              {/* Dedicated Short-Form Video Reels Player (Khung 9:16 Chuẩn Reels/TikTok & Native Player) */}
+                    {/* Facebook Posts & Articles */}
+                    {nonReelLinks.some((l) => l.platform === 'facebook') && (
+                      <div>
+                        <h4 className="mb-2.5 flex items-center gap-1.5 font-sans-clean text-xs font-bold uppercase text-[#1877F2]">
+                          <FontAwesomeIcon icon={faFacebook} className="h-3.5 w-3.5" />
+                          Bài viết trên Facebook
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          {nonReelLinks
+                            .filter((l) => l.platform === 'facebook')
+                            .map((item, idx) => (
+                              <a
+                                key={idx}
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group/link flex items-center justify-between rounded-xl border border-blue-100 bg-[#F0F5FF]/70 px-3.5 py-2.5 transition-all hover:bg-[#1877F2] hover:text-white hover:shadow-md"
+                              >
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <FontAwesomeIcon
+                                    icon={faFacebook}
+                                    className="h-4 w-4 text-[#1877F2] group-hover/link:text-white shrink-0"
+                                  />
+                                  <span className="truncate font-sans-clean text-xs font-semibold text-stone-800 group-hover/link:text-white">
+                                    {item.label}
+                                  </span>
+                                </div>
+                                <FontAwesomeIcon
+                                  icon={faArrowUpRightFromSquare}
+                                  className="h-3 w-3 text-stone-400 group-hover/link:text-white shrink-0 ml-2"
+                                />
+                              </a>
+                            ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+
+              {/* Dedicated Short-Form Video Reels Player (Khung Điện Thoại 9:16 Chuẩn Mobile Reels) */}
               {project.videoClips && project.videoClips.length > 0 && (
                 <div className="rounded-2xl border border-stone-200/80 bg-white/95 p-5 sm:p-6 shadow-sm space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
@@ -497,7 +509,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                           Short-form Video Reels (Xem Trực Tiếp) 🎬
                         </h3>
                         <p className="font-sans-clean text-xs text-stone-500">
-                          {project.videoClips.length} video ngắn sản xuất thực chiến — trải nghiệm khung điện thoại 9:16 chuẩn Reels/TikTok
+                          {project.videoClips.length} video ngắn sản xuất thực chiến — trải nghiệm giao diện điện thoại 9:16 chuẩn Reels/TikTok
                         </p>
                       </div>
                     </div>
@@ -506,7 +518,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                     </span>
                   </div>
 
-                  {/* Responsive Grid of Video Reel Cards */}
+                  {/* Responsive Grid of Mobile Phone Video Cards */}
                   <div
                     className={`grid gap-5 ${
                       project.videoClips.length <= 2
@@ -514,109 +526,31 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                         : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
                     }`}
                   >
-                    {project.videoClips.map((clip, cIdx) => {
-                      const isGoogleDriveOrLocal = Boolean(
-                        clip.localVideoUrl ||
-                          clip.platform === 'google-drive' ||
-                          clip.embedUrl?.includes('drive.google.com') ||
-                          clip.videoUrl.includes('drive.google.com')
-                      );
-
-                      if (isGoogleDriveOrLocal) {
-                        return (
-                          <HighlightVideoCard
-                            key={clip.id || cIdx}
-                            index={cIdx + 1}
-                            title={clip.title}
-                            subtitle={clip.subtitle}
-                            channelName={clip.channelName || 'Quốc Phong Hair Salon'}
-                            channelHandle={clip.channelHandle || '@quocphonghairsalon'}
-                            platform="google-drive"
-                            videoUrl={clip.videoUrl}
-                            localVideoUrl={clip.localVideoUrl}
-                            image={clip.image}
-                            stats={clip.stats}
-                            duration={clip.duration || '00:00/00:26'}
-                            viewsBadge={clip.viewsBadge}
-                          />
-                        );
-                      }
-
-                      // Facebook Reels (e.g. Savax Luxury)
-                      const isFbReel = Boolean(
-                        clip.embedUrl?.includes('facebook.com') ||
-                          clip.videoUrl.includes('facebook.com')
-                      );
-
-                      return (
-                        <div
-                          key={clip.id || cIdx}
-                          className="group/reel relative rounded-2xl border border-stone-200 bg-[#FAF8F5] p-3.5 shadow-xs hover:shadow-md transition-all hover:border-pink-300 flex flex-col justify-between"
-                        >
-                          <div className="flex items-center justify-between gap-2 pb-2.5 px-0.5 border-b border-stone-200/60 mb-3">
-                            <div className="flex items-center gap-2 min-w-0">
-                              <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-stone-900 text-white text-[11px] sm:text-xs font-black flex items-center justify-center shrink-0">
-                                {cIdx + 1}
-                              </span>
-                              <h4 className="font-editorial font-bold text-xs sm:text-sm text-stone-900 tracking-tight truncate">
-                                {clip.channelName || project.title}
-                              </h4>
-                            </div>
-                            <div className="flex items-center gap-1.5 shrink-0">
-                              {clip.viewsBadge && (
-                                <span className="rounded-full bg-[#FFE3E8] px-2 py-0.5 font-sans-clean text-[10px] font-bold text-[#F2789F]">
-                                  {clip.viewsBadge}
-                                </span>
-                              )}
-                              {isFbReel && (
-                                <FontAwesomeIcon icon={faFacebook} className="text-sm text-[#1877F2]" />
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-black shadow-inner flex items-center justify-center">
-                            <iframe
-                              src={
-                                clip.embedUrl ||
-                                `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
-                                  clip.videoUrl
-                                )}&show_text=0&autoplay=0`
-                              }
-                              className="h-full w-full border-0 rounded-xl"
-                              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                              allowFullScreen
-                              title={clip.title}
-                            />
-                          </div>
-
-                          <div className="mt-3 flex flex-col flex-1 justify-between gap-2">
-                            <div>
-                              <h5 className="font-editorial text-xs sm:text-sm font-bold text-stone-900 line-clamp-2 leading-snug">
-                                {clip.title}
-                              </h5>
-                              {clip.subtitle && (
-                                <p className="mt-1 font-sans-clean text-[11px] text-stone-500 line-clamp-2">
-                                  {clip.subtitle}
-                                </p>
-                              )}
-                            </div>
-
-                            <div className="pt-2 border-t border-stone-200/60">
-                              <a
-                                href={clip.videoUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full py-2 px-3 bg-[#111827] hover:bg-black text-white rounded-xl font-sans-clean font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-1.5 transition-all shadow-xs hover:shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
-                              >
-                                <FontAwesomeIcon icon={faFacebook} className="text-[#1877F2] text-xs" />
-                                <span>MỞ TRÊN FACEBOOK</span>
-                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[9px] opacity-80" />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                    {project.videoClips.map((clip, cIdx) => (
+                      <HighlightVideoCard
+                        key={clip.id || cIdx}
+                        index={cIdx + 1}
+                        title={clip.title}
+                        subtitle={clip.subtitle}
+                        channelName={clip.channelName || project.title}
+                        channelHandle={
+                          clip.channelHandle ||
+                          `@${project.title.toLowerCase().replace(/[^a-z0-9]/g, '')}`
+                        }
+                        platform={
+                          clip.platform ||
+                          (clip.videoUrl.includes('facebook.com') ? 'facebook' : 'google-drive')
+                        }
+                        videoUrl={clip.videoUrl}
+                        embedUrl={clip.embedUrl}
+                        localVideoUrl={clip.localVideoUrl}
+                        image={clip.image}
+                        avatarUrl={project.logo}
+                        stats={clip.stats}
+                        duration={clip.duration || '00:00/00:26'}
+                        viewsBadge={clip.viewsBadge}
+                      />
+                    ))}
                   </div>
                 </div>
               )}

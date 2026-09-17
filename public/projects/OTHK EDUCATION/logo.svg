@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="40" fill="#0E2F3A" />
+  <!-- Academic / Education Crest Icon -->
+  <g transform="translate(100, 78)">
+    <!-- Graduation Cap & Book Accent -->
+    <path d="M0 -34 L36 -16 L0 2 L-36 -16 Z" fill="#81D8D0" />
+    <path d="M-24 -10 V14 C-24 24 24 24 24 14 V-10" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M36 -16 V12 C36 16 38 18 40 20" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="40" cy="22" r="3.5" fill="#FBBF24"/>
+    <!-- Glowing Core -->
+    <polygon points="0,-10 6,-4 0,2 -6,-4" fill="#FBBF24" opacity="0.9"/>
+  </g>
+  <!-- Brand Name -->
+  <text x="100" y="146" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">OTHK</text>
+  <text x="100" y="165" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="700" fill="#81D8D0" text-anchor="middle" letter-spacing="2.5">EDUCATION</text>
+</svg>

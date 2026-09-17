@@ -4,8 +4,8 @@ export const experiencesData: ExperienceItem[] = [
   {
     id: "exp-mt-digital",
     company: "MT DIGITAL AGENCY",
-    role: "Content Marketing",
-    description: "Phụ trách triển khai Content Marketing cho nhiều nhóm ngành, bao gồm Beauty, Luxury & Interior, từ nghiên cứu, xây dựng định hướng nội dung đến sản xuất và tối ưu Social Media Content.",
+    role: "Content Marketing & Video Production",
+    description: "Phụ trách triển khai Content Marketing & Video Production cho nhiều nhóm ngành (Beauty, Luxury & Interior, Real Estate), từ nghiên cứu, xây dựng định hướng nội dung đến sản xuất video ngắn và tối ưu Social Media Content.",
     badgeColor: "pink"
   },
   {

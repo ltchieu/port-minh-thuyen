@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="40" fill="#2E1B10" />
+  <!-- Coffee Bean & Creative Space Emblem -->
+  <g transform="translate(100, 75)">
+    <!-- Outer Warm Coffee Ring -->
+    <circle cx="0" cy="0" r="38" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-dasharray="6 4" opacity="0.4"/>
+    <!-- Coffee Bean Icon -->
+    <ellipse cx="0" cy="0" rx="26" ry="32" fill="#D97706" transform="rotate(-15)"/>
+    <path d="M-6 -28 C6 -14, -6 10, 6 28" fill="none" stroke="#2E1B10" stroke-width="4" stroke-linecap="round" transform="rotate(-15)"/>
+    <!-- Small Steam / Sparkle Accent -->
+    <path d="M-2 -36 C-6 -42, 6 -46, 2 -52" fill="none" stroke="#FDE68A" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="16" cy="-34" r="3" fill="#FDE68A"/>
+  </g>
+  <!-- Typography -->
+  <text x="100" y="145" font-family="'Playfair Display', Georgia, serif" font-size="11" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">THE FAMILY BEAN</text>
+  <text x="100" y="165" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="700" fill="#F59E0B" text-anchor="middle" letter-spacing="2.5">COFFEE &amp; SPACE</text>
+</svg>

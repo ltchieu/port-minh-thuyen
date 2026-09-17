@@ -23,8 +23,13 @@ export default function App() {
         // Ensure new activities data is loaded if local storage has stale/outdated data
         if (
           !parsed.projects ||
-          !parsed.projects.some((p: any) => p.id === 'proj-savax-luxury-door') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.videoClips?.some((c: any) => c.localVideoUrl?.includes('/videos/quoc_phong/'))) ||
+          !parsed.projects.some((p: any) => p.id === 'proj-savax-luxury-door' && p.videoClips?.some((c: any) => c.image?.includes('thumb_01.jpg'))) ||
+          !parsed.projects.some((p: any) => p.id === 'proj-tt-genesis') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-othk-education-ueh') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-the-family-bean-coffee' && p.videoClips?.some((c: any) => c.platform === 'facebook')) ||
+          !parsed.projects.some((p: any) => p.id === 'proj-pisago-music-art') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-steed-sportswear') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.videoClips?.some((c: any) => c.platform === 'facebook')) ||
           !parsed.startups ||
           !parsed.startups.some((s: any) => s.id === 'startup-carne-gemstone') ||
           !parsed.activities ||
