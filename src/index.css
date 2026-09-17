@@ -8,6 +8,11 @@
   --scrollbar-thumb-hover: #F2789F;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
 html,
 body {
   overflow-x: hidden !important;

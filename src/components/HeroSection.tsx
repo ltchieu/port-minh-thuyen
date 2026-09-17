@@ -210,7 +210,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
                       Content Marketing
                     </p>
                     <p className="font-editorial text-[11px] sm:text-xs font-bold text-stone-800 leading-tight">
-                      Social Media Specialist
+                      Social Media
                     </p>
                   </div>
                 </div>
