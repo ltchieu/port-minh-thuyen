@@ -20,7 +20,9 @@ import {
   faCoffee,
   faPalette,
   faMusic,
-  faDumbbell
+  faDumbbell,
+  faClapperboard,
+  faBolt
 } from '@fortawesome/free-solid-svg-icons';
 import { ProjectItem } from '../types';
 import { ProjectModal } from './ProjectModal';
@@ -1055,7 +1057,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       className="flex-1 rounded-2xl bg-stone-900 hover:bg-[#B45309] px-5 py-3 font-sans-clean text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <FontAwesomeIcon icon={faEye} className="h-4 w-4" />
-                      <span>Xem Chi Tiết Case Study &amp; 6 Video Reels 🎬</span>
+                      <span>Xem Chi Tiết Case Study &amp; 6 Video Reels</span>
+                      <FontAwesomeIcon icon={faClapperboard} className="h-3.5 w-3.5 text-amber-300 ml-0.5" />
                       <FontAwesomeIcon icon={faUpRightFromSquare} className="h-3 w-3 opacity-80 ml-1" />
                     </button>
                   </div>
@@ -1287,7 +1290,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       className="flex-1 rounded-2xl bg-stone-900 hover:bg-[#059669] px-5 py-3 font-sans-clean text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <FontAwesomeIcon icon={faEye} className="h-4 w-4" />
-                      <span>Xem Chi Tiết Case Study &amp; 5 Video Reels 🎨</span>
+                      <span>Xem Chi Tiết Case Study &amp; 5 Video Reels</span>
+                      <FontAwesomeIcon icon={faPalette} className="h-3.5 w-3.5 text-emerald-300 ml-0.5" />
                       <FontAwesomeIcon icon={faUpRightFromSquare} className="h-3 w-3 opacity-80 ml-1" />
                     </button>
                   </div>
@@ -1524,7 +1528,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                       className="flex-1 rounded-2xl bg-stone-900 hover:bg-[#EA580C] px-5 py-3 font-sans-clean text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-md transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <FontAwesomeIcon icon={faEye} className="h-4 w-4" />
-                      <span>Xem Chi Tiết Case Study &amp; 7 Video Reels ⚡</span>
+                      <span>Xem Chi Tiết Case Study &amp; 7 Video Reels</span>
+                      <FontAwesomeIcon icon={faBolt} className="h-3.5 w-3.5 text-amber-300 ml-0.5" />
                       <FontAwesomeIcon icon={faUpRightFromSquare} className="h-3 w-3 opacity-80 ml-1" />
                     </button>
                   </div>

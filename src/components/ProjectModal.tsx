@@ -23,7 +23,10 @@ import {
   faBriefcase,
   faLink,
   faFilm,
-  faVideo
+  faVideo,
+  faRocket,
+  faFileLines,
+  faWandMagicSparkles
 } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faGoogleDrive } from '@fortawesome/free-brands-svg-icons';
 import { ProjectItem } from '../types';
@@ -447,8 +450,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                         <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#E6F7F5] text-[#52C0B6]">
                           <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="h-3.5 w-3.5" />
                         </span>
-                        <h3 className="font-editorial text-xl font-bold text-stone-900">
-                          Sản phẩm &amp; Liên kết triển khai thực tế 🚀
+                        <h3 className="font-editorial text-xl font-bold text-stone-900 flex items-center gap-1.5">
+                          <span>Sản phẩm &amp; Liên kết triển khai thực tế</span>
+                          <FontAwesomeIcon icon={faRocket} className="h-4 w-4 text-[#52C0B6]" />
                         </h3>
                       </div>
                       <span className="font-sans-clean text-xs font-bold text-stone-400">
@@ -505,8 +509,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                         <FontAwesomeIcon icon={faFilm} className="h-3.5 w-3.5" />
                       </span>
                       <div>
-                        <h3 className="font-editorial text-xl font-bold text-stone-900">
-                          Short-form Video Reels (Xem Trực Tiếp) 🎬
+                        <h3 className="font-editorial text-xl font-bold text-stone-900 flex items-center gap-1.5">
+                          <span>Short-form Video Reels (Xem Trực Tiếp)</span>
+                          <FontAwesomeIcon icon={faClapperboard} className="h-4 w-4 text-[#F2789F]" />
                         </h3>
                         <p className="font-sans-clean text-xs text-stone-500">
                           {project.videoClips.length} video ngắn sản xuất thực chiến — trải nghiệm giao diện điện thoại 9:16 chuẩn Reels/TikTok
@@ -570,8 +575,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                       />
                     </div>
                     <div>
-                      <h4 className="font-editorial text-base font-bold text-stone-800">
-                        Academic Presentation Decks & Rationale Documents 📄
+                      <h4 className="font-editorial text-base font-bold text-stone-800 flex items-center gap-1.5">
+                        <span>Academic Presentation Decks &amp; Rationale Documents</span>
+                        <FontAwesomeIcon icon={faFileLines} className="h-3.5 w-3.5 text-[#52C0B6]" />
                       </h4>
                       <p className="font-sans-clean text-xs text-stone-600">
                         View or download original project files & documents
@@ -626,8 +632,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               <div className="grid grid-cols-1 gap-6 md:grid-cols-12 items-start">
                 <div className="space-y-4 md:col-span-7">
                   <div>
-                    <h3 className="font-editorial text-xl font-bold text-stone-800">
-                      Campaign Concept & Vision ✨
+                    <h3 className="font-editorial text-xl font-bold text-stone-800 flex items-center gap-1.5">
+                      <span>Campaign Concept &amp; Vision</span>
+                      <FontAwesomeIcon icon={faWandMagicSparkles} className="h-4 w-4 text-[#F2789F]" />
                     </h3>
                     <p className="mt-1 font-sans-clean text-sm leading-relaxed text-stone-600">
                       {project.concept || project.summary}
@@ -681,8 +688,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
                 {/* Results & Tags */}
                 <div className="space-y-4 rounded-2xl border border-stone-200 bg-white p-5 shadow-sm md:col-span-5">
-                  <h3 className="font-fluffy text-lg font-bold text-[#F2789F]">
-                    Impact & Deliverables 🚀
+                  <h3 className="font-fluffy text-lg font-bold text-[#F2789F] flex items-center gap-1.5">
+                    <span>Impact &amp; Deliverables</span>
+                    <FontAwesomeIcon icon={faRocket} className="h-3.5 w-3.5 text-[#F2789F]" />
                   </h3>
 
                   {project.results && project.results.length > 0 && (
