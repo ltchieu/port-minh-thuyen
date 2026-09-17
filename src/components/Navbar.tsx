@@ -20,8 +20,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'About Me', href: '#about', id: 'about' },
     { name: 'Experiences', href: '#experiences', id: 'experiences' },
     { name: 'Projects', href: '#projects', id: 'projects' },
-    { name: 'Start Up', href: '#startups', id: 'startups' },
-    { name: 'Activities', href: '#activities', id: 'activities' },
     { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 

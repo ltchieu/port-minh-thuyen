@@ -32,7 +32,6 @@ interface ProjectsSectionProps {
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   const [selectedCompany, setSelectedCompany] = useState<string>('All');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeProject, setActiveProject] = useState<ProjectItem | null>(null);
 
   // MT Digital active client
@@ -52,9 +51,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
   // Preserve scroll position when filter changes so scrollbar remains at current position
   const scrollPosRef = useRef<number | null>(null);
-
-  // Extract unique categories dynamically
-  const categories = ['All', ...Array.from(new Set(projects.map((p) => p.category)))];
 
   // 1. Group: MT Digital Agency projects
   const mtDigitalProjects = projects.filter(
@@ -141,40 +137,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
     }
   ];
 
-  const handleSelectCategory = (cat: string) => {
-    scrollPosRef.current = window.scrollY;
-    setSelectedCategory(cat);
-
-    // Auto-focus matching project or company
-    if (cat === 'Hair & Beauty') {
-      setSelectedCompany('MT DIGITAL AGENCY');
-      const idx = mtDigitalProjects.findIndex((p) => p.id === 'proj-quoc-phong-hair-salon');
-      if (idx !== -1) setActiveMtClientIndex(idx);
-    } else if (cat === 'Luxury & Interior') {
-      setSelectedCompany('MT DIGITAL AGENCY');
-      const idx = mtDigitalProjects.findIndex((p) => p.id === 'proj-savax-luxury-door');
-      if (idx !== -1) setActiveMtClientIndex(idx);
-    } else if (cat === 'Real Estate') {
-      setSelectedCompany('MT DIGITAL AGENCY');
-      const idx = mtDigitalProjects.findIndex((p) => p.id === 'proj-tt-genesis');
-      if (idx !== -1) setActiveMtClientIndex(idx);
-    } else if (cat === 'EdTech & Community' || cat === 'Education') {
-      setSelectedCompany('OTHK EDUCATION');
-    } else if (cat === 'F&B & Hospitality' || cat === 'F&B') {
-      setSelectedCompany('THE FAMILY BEAN COFFEE');
-    } else if (cat === 'Art & Education' || cat === 'Art') {
-      setSelectedCompany('PISAGO MUSIC & ART');
-    } else if (cat === 'Sportswear & Fitness' || cat === 'Fitness' || cat === 'Sportswear') {
-      setSelectedCompany('STEED');
-    }
-  };
-
   const handleSelectCompany = (companyId: string) => {
     scrollPosRef.current = window.scrollY;
     setSelectedCompany(companyId);
-    if (selectedCategory !== 'All') {
-      setSelectedCategory('All');
-    }
   };
 
   useLayoutEffect(() => {
@@ -186,7 +151,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
       });
       scrollPosRef.current = null;
     }
-  }, [selectedCategory, selectedCompany]);
+  }, [selectedCompany]);
 
   const handlePrevMtClient = () => {
     setActiveMtClientIndex((prev) =>
@@ -242,19 +207,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
     'Hiệu quả video viral ổn định trên TikTok & Reels (Đỉnh 39.8K Views)';
 
   const shouldShowMtDigital =
-    (selectedCompany === 'All' || selectedCompany === 'MT DIGITAL AGENCY') &&
-    (selectedCategory === 'All' ||
-      mtDigitalProjects.some((p) => p.category === selectedCategory));
+    selectedCompany === 'All' || selectedCompany === 'MT DIGITAL AGENCY';
 
   const shouldShowOthk =
-    (selectedCompany === 'All' || selectedCompany === 'OTHK EDUCATION') &&
-    (selectedCategory === 'All' ||
-      othkProjects.some((p) => p.category === selectedCategory));
+    selectedCompany === 'All' || selectedCompany === 'OTHK EDUCATION';
 
   const shouldShowFamilyBean =
-    (selectedCompany === 'All' || selectedCompany === 'THE FAMILY BEAN COFFEE') &&
-    (selectedCategory === 'All' ||
-      familyBeanProjects.some((p) => p.category === selectedCategory));
+    selectedCompany === 'All' || selectedCompany === 'THE FAMILY BEAN COFFEE';
 
   // Pisago Music & Art Project
   const pisagoProject = pisagoProjects[0];
@@ -267,9 +226,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
     'Kế hoạch chiến lược Content & Sản xuất 5 video ngắn tại Pisago Music & Art';
 
   const shouldShowPisago =
-    (selectedCompany === 'All' || selectedCompany === 'PISAGO MUSIC & ART') &&
-    (selectedCategory === 'All' ||
-      pisagoProjects.some((p) => p.category === selectedCategory));
+    selectedCompany === 'All' || selectedCompany === 'PISAGO MUSIC & ART';
 
   // STEED Sportswear & Gym Project
   const steedProject = steedProjects[0];
@@ -283,8 +240,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
   const shouldShowSteed =
     (selectedCompany === 'All' || selectedCompany === 'STEED') &&
-    (selectedCategory === 'All' ||
-      steedProjects.some((p) => p.category === selectedCategory));
+    steedProjects.length > 0;
 
   return (
     <section id="projects" className="relative py-16 md:py-24">
@@ -343,24 +299,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
               );
             })}
           </div>
-
-          {/* 2. Secondary Category Filter Tabs */}
-          <div className="mt-4 flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => handleSelectCategory(cat)}
-                className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 font-sans-clean text-[11px] font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-                  selectedCategory === cat
-                    ? 'bg-[#FF8DA1] text-white shadow-sm scale-105'
-                    : 'bg-stone-100/90 text-stone-500 hover:bg-stone-200/80'
-                }`}
-              >
-                <span>{cat === 'All' ? 'All Categories' : cat}</span>
-              </button>
-            ))}
-          </div>
         </div>
 
         {/* 1. MT DIGITAL AGENCY MASTER SHOWCASE HUB */}
@@ -408,9 +346,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                     type="button"
                     onClick={() => {
                       setActiveMtClientIndex(idx);
-                      if (selectedCategory !== 'All' && selectedCategory !== proj.category) {
-                        setSelectedCategory('All');
-                      }
                     }}
                     className={`group relative flex items-center gap-3 rounded-2xl px-4 py-2.5 transition-all duration-300 text-left cursor-pointer border ${
                       isActive
@@ -455,7 +390,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             </div>
 
             {/* Master Hub Showcase Container */}
-            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-hidden">
+            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-visible">
               {/* Top Washi Tape */}
               <div className={`${mtWashiTape} absolute -top-3 left-10 h-6 w-32 -rotate-1 z-10`} />
 
@@ -710,7 +645,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             </div>
 
             {/* OTHK Showcase Card */}
-            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-hidden">
+            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-visible">
               {/* Top Washi Tape */}
               <div className="washi-tape-tiffany absolute -top-3 left-10 h-6 w-32 rotate-1 z-10" />
 
@@ -936,7 +871,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             </div>
 
             {/* The Family Bean Showcase Card */}
-            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-hidden">
+            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-visible">
               {/* Top Washi Tape */}
               <div className="washi-tape-orange absolute -top-3 left-10 h-6 w-32 -rotate-1 z-10" />
 
@@ -1164,7 +1099,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             </div>
 
             {/* Pisago Showcase Card */}
-            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-hidden">
+            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-visible">
               {/* Top Washi Tape */}
               <div className="washi-tape-green absolute -top-3 left-10 h-6 w-32 -rotate-1 z-10" />
 
@@ -1379,9 +1314,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
         {/* 5. STEED SPORTSWEAR & GYM APPAREL SHOWCASE */}
         {shouldShowSteed && steedProject && (
-          <div className="mt-14 space-y-6">
-            <div className="text-left">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFEDE5] px-3.5 py-1 font-sans-clean text-xs font-bold text-[#EA580C] uppercase tracking-wider">
+          <div className="mb-20">
+            {/* Agency Group Header */}
+            <div className="mb-6 flex flex-col items-center text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFEDE5] px-4 py-1 font-handwritten text-lg font-bold text-[#EA580C]">
                 <FontAwesomeIcon icon={faDumbbell} className="h-3.5 w-3.5" />
                 05 — STEED SPORTSWEAR
               </span>
@@ -1394,7 +1330,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
             </div>
 
             {/* Steed Showcase Card */}
-            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-hidden">
+            <div className="relative rounded-3xl border border-stone-200/90 bg-white p-5 sm:p-8 lg:p-10 shadow-2xl shadow-stone-200/60 overflow-visible">
               {/* Top Washi Tape */}
               <div className="washi-tape-orange absolute -top-3 left-10 h-6 w-32 -rotate-1 z-10" />
 

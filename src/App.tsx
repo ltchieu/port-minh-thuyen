@@ -7,8 +7,6 @@ import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { ExperiencesSection } from './components/ExperiencesSection';
 import { ProjectsSection } from './components/ProjectsSection';
-import { StartupSection } from './components/StartupSection';
-import { ActivitiesSection } from './components/ActivitiesSection';
 import { ContactSection } from './components/ContactSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +18,7 @@ export default function App() {
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
-        // Ensure new activities data is loaded if local storage has stale/outdated data
+        // Ensure new data is loaded if local storage has stale/outdated data
         if (
           !parsed.projects ||
           !parsed.projects.some((p: any) => p.id === 'proj-savax-luxury-door' && p.videoClips?.some((c: any) => c.image?.includes('thumb_01.jpg'))) ||
@@ -30,10 +28,6 @@ export default function App() {
           !parsed.projects.some((p: any) => p.id === 'proj-pisago-music-art') ||
           !parsed.projects.some((p: any) => p.id === 'proj-steed-sportswear') ||
           !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.videoClips?.some((c: any) => c.platform === 'facebook')) ||
-          !parsed.startups ||
-          !parsed.startups.some((s: any) => s.id === 'startup-carne-gemstone') ||
-          !parsed.activities ||
-          !parsed.activities.some((a: any) => a.id === 'act-trang-khuyet') ||
           !parsed.about ||
           parsed.about.name !== 'Lê Thị Kim Thuyên' ||
           !parsed.hero ||
@@ -56,7 +50,7 @@ export default function App() {
 
   // Scroll section detector
   useEffect(() => {
-    const sections = ['hero', 'about', 'experiences', 'projects', 'startups', 'activities', 'contact'];
+    const sections = ['hero', 'about', 'experiences', 'projects', 'contact'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -107,13 +101,7 @@ export default function App() {
         {/* 4. Selected Projects Section */}
         <ProjectsSection projects={data.projects} />
 
-        {/* 5. Start Up / Initiatives Section */}
-        <StartupSection startups={data.startups} />
-
-        {/* 6. Volunteer & Activities Section */}
-        <ActivitiesSection activities={data.activities} />
-
-        {/* 7. Contact Section */}
+        {/* 5. Contact Section */}
         <ContactSection data={data.contact} />
       </main>
 

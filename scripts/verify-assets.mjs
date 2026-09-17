@@ -9,7 +9,6 @@ const publicDir = path.join(rootDir, 'public');
 
 const dataFiles = [
   path.join(rootDir, 'src', 'data', 'projects.ts'),
-  path.join(rootDir, 'src', 'data', 'startups.ts'),
   path.join(rootDir, 'src', 'data', 'hero.ts'),
   path.join(rootDir, 'src', 'data', 'experiences.ts'),
   path.join(rootDir, 'src', 'data', 'about.ts')
@@ -29,11 +28,9 @@ for (const file of dataFiles) {
     const relUrl = m.replace(/^"|"$/g, '');
     // Ignore internal routes or external links
     if (!relUrl.startsWith('/uni_projects') && 
-        !relUrl.startsWith('/startup-project') && 
         !relUrl.startsWith('/images') && 
         !relUrl.startsWith('/logo') && 
-        !relUrl.startsWith('/font_title') &&
-        !relUrl.startsWith('/Start-up project')) {
+        !relUrl.startsWith('/font_title')) {
       continue;
     }
 
