@@ -525,11 +525,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
                   {/* Responsive Grid of Mobile Phone Video Cards */}
                   <div
-                    className={`grid gap-5 ${
-                      project.videoClips.length <= 2
+                    className={`grid gap-5 ${project.videoClips.length <= 2
                         ? 'grid-cols-1 sm:grid-cols-2 max-w-2xl mx-auto'
                         : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
-                    }`}
+                      }`}
                   >
                     {project.videoClips.map((clip, cIdx) => (
                       <HighlightVideoCard

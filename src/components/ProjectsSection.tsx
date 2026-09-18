@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -38,6 +38,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
   // MT Digital active client
   const [activeMtClientIndex, setActiveMtClientIndex] = useState<number>(0);
+  const [activeMtImageIndex, setActiveMtImageIndex] = useState<number>(0);
+
+  useEffect(() => {
+    setActiveMtImageIndex(0);
+  }, [activeMtClientIndex]);
 
   // OTHK Education active preview image
   const [activeOthkImageIndex, setActiveOthkImageIndex] = useState<number>(0);
@@ -189,6 +194,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
       : currentMtProject?.logo
       ? [currentMtProject.logo]
       : [];
+  const mtImages = currentMtProject?.galleryImages || [];
+  const currentMtImage = mtImages[activeMtImageIndex] || currentMtProject?.coverImage;
+  const currentMtCaption =
+    (currentMtProject?.imageCaptions && currentMtProject.imageCaptions[currentMtImage]) ||
+    '';
 
   // OTHK Project
   const othkProject = othkProjects[0];
@@ -335,7 +345,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
                 const clientBadge =
                   proj.id === 'proj-quoc-phong-hair-salon'
-                    ? '✦ 11K+ Views'
+                    ? '✦ 93.8K Views'
                     : proj.id === 'proj-savax-luxury-door'
                     ? '✦ 56K+ Views'
                     : proj.id === 'proj-tt-genesis'
@@ -418,13 +428,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                   className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center"
                 >
                   {/* Left Column: Media Visual Showcase (5 Cols) */}
-                  <div className="lg:col-span-5">
+                  <div className="lg:col-span-5 flex flex-col gap-3">
                     <div
                       onClick={() => setActiveProject(currentMtProject)}
                       className="group/img relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-100 border border-stone-200/90 shadow-md cursor-pointer"
                     >
                       <img
-                        src={currentMtProject.coverImage}
+                        src={currentMtImage}
                         alt={currentMtProject.title}
                         referrerPolicy="no-referrer"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover/img:scale-105"
@@ -469,6 +479,54 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                         </div>
                       )}
                     </div>
+
+                    {/* Caption of active preview image */}
+                    {currentMtCaption && (
+                      <div className="rounded-xl bg-[#FAF8F5] border border-stone-200/60 p-2.5 text-left">
+                        <p className="font-sans-clean text-[11px] text-stone-600 line-clamp-2 leading-relaxed italic">
+                          <span className="font-bold text-[#F2789F] not-italic mr-1">✦ Tư liệu:</span>
+                          {currentMtCaption}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Mini Thumbnails Strip if project has multiple gallery images */}
+                    {mtImages.length > 1 && (
+                      <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5 no-scrollbar">
+                        {mtImages.map((imgUrl, thumbIdx) => {
+                          const isThumbActive = activeMtImageIndex === thumbIdx;
+                          const thumbLabel =
+                            imgUrl.includes('IMG_1051')
+                              ? 'Meta 93.8K'
+                              : imgUrl.includes('IMG_1052')
+                              ? 'Organic 51K'
+                              : imgUrl.includes('Thu hút')
+                              ? 'Reels 11K+'
+                              : imgUrl.includes('Cntent')
+                              ? 'Calendar 3T'
+                              : `Tư liệu 0${thumbIdx + 1}`;
+
+                          return (
+                            <button
+                              key={thumbIdx}
+                              type="button"
+                              onClick={() => setActiveMtImageIndex(thumbIdx)}
+                              className={`relative shrink-0 h-13 w-16 sm:h-14 sm:w-18 rounded-xl overflow-hidden border-2 transition-all cursor-pointer ${
+                                isThumbActive
+                                  ? 'border-[#F2789F] ring-2 ring-[#F2789F]/30 scale-105 shadow-sm'
+                                  : 'border-stone-200 opacity-70 hover:opacity-100 hover:border-stone-400'
+                              }`}
+                              title={`Xem tư liệu 0${thumbIdx + 1}`}
+                            >
+                              <img src={imgUrl} alt="" className="h-full w-full object-cover" />
+                              <span className="absolute inset-x-0 bottom-0 bg-stone-950/80 text-[8px] font-sans-clean font-bold text-white text-center py-0.5 truncate px-0.5">
+                                {thumbLabel}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
 
                   {/* Right Column: Project Details & Intel (7 Cols) */}
@@ -707,11 +765,17 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
 
                   {/* Mini Thumbnails Strip (Click to Preview) */}
                   <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-0.5 no-scrollbar">
-                    {othkImages.slice(0, 6).map((imgUrl, thumbIdx) => {
+                    {othkImages.map((imgUrl, thumbIdx) => {
                       const isThumbActive = activeOthkImageIndex === thumbIdx;
                       const thumbLabel =
-                        thumbIdx === 0
-                          ? 'Group 10.5K'
+                        imgUrl.includes('IMG_1053')
+                          ? '+2.395 Mems'
+                          : imgUrl.includes('IMG_1054')
+                          ? 'Tương tác 60D'
+                          : imgUrl.includes('IMG_1055')
+                          ? '63.5K Xem'
+                          : thumbIdx === 0
+                          ? 'Group 10.7K'
                           : thumbIdx === 1
                           ? 'Viral 25.1K'
                           : thumbIdx === 2
@@ -720,7 +784,15 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) =>
                           ? 'Bí kíp K52'
                           : thumbIdx === 4
                           ? 'Review Cơ sở'
-                          : 'Best Builder';
+                          : thumbIdx === 5
+                          ? 'KPI 55.7%'
+                          : thumbIdx === 6
+                          ? 'Best Builder'
+                          : thumbIdx === 7
+                          ? '3T Liên tiếp'
+                          : thumbIdx === 8
+                          ? 'Doanh thu #1'
+                          : `Tư liệu 0${thumbIdx + 1}`;
 
                       return (
                         <button

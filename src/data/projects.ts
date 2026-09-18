@@ -13,11 +13,15 @@ export const projectsData: ProjectItem[] = [
     coverImage: "/projects/MT_Digital/Quoc_phong_hair_salon/Thu hút.JPG",
     galleryImages: [
       "/projects/MT_Digital/Quoc_phong_hair_salon/Thu hút.JPG",
-      "/projects/MT_Digital/Quoc_phong_hair_salon/Cntent caleder.jpg"
+      "/projects/MT_Digital/Quoc_phong_hair_salon/Cntent caleder.jpg",
+      "/projects/MT_Digital/Quoc_phong_hair_salon/IMG_1051.JPG",
+      "/projects/MT_Digital/Quoc_phong_hair_salon/IMG_1052.JPG"
     ],
     imageCaptions: {
       "/projects/MT_Digital/Quoc_phong_hair_salon/Thu hút.JPG": "Hiệu quả tương tác thực chiến: Video Reels đạt 11K+ views, 9.6K views, 6.1K views và hàng loạt video tiếp cận tự nhiên.",
-      "/projects/MT_Digital/Quoc_phong_hair_salon/Cntent caleder.jpg": "Bản kế hoạch Content Calendar 3 tháng chi tiết: Định hướng Campaign Theme, 5 Content Pillars, Kế hoạch đăng bài đa nền tảng."
+      "/projects/MT_Digital/Quoc_phong_hair_salon/Cntent caleder.jpg": "Bản kế hoạch Content Calendar 3 tháng chi tiết: Định hướng Campaign Theme, 5 Content Pillars, Kế hoạch đăng bài đa nền tảng.",
+      "/projects/MT_Digital/Quoc_phong_hair_salon/IMG_1051.JPG": "Báo cáo hiệu quả Meta Business Suite (28 ngày): 93.8K lượt xem (+39%), tiếp cận 25.7K người xem (+93.1%), 324 lượt tương tác và 244 lượt click liên kết.",
+      "/projects/MT_Digital/Quoc_phong_hair_salon/IMG_1052.JPG": "Tổng quan hiệu quả nội dung Facebook: Đạt 93.756 lượt xem (51.080 tự nhiên + 42.676 quảng cáo), 9.6K lượt xem trên 3 giây, thời gian xem video tích lũy 1 ngày 20 giờ."
     },
     videoClips: [
       {
@@ -33,9 +37,9 @@ export const projectsData: ProjectItem[] = [
         duration: "00:00/00:26",
         viewsBadge: "Reels Hot",
         stats: {
-          likes: "3,420",
-          comments: "148",
-          shares: "520",
+          likes: "86",
+          comments: "24",
+          shares: "29",
           views: "11K+"
         }
       },
@@ -52,9 +56,9 @@ export const projectsData: ProjectItem[] = [
         duration: "00:00/00:28",
         viewsBadge: "Viral 9.6K",
         stats: {
-          likes: "2,890",
-          comments: "124",
-          shares: "430",
+          likes: "65",
+          comments: "18",
+          shares: "21",
           views: "9.6K"
         }
       },
@@ -71,9 +75,9 @@ export const projectsData: ProjectItem[] = [
         duration: "00:00/00:15",
         viewsBadge: "High Retention",
         stats: {
-          likes: "1,940",
-          comments: "98",
-          shares: "280",
+          likes: "42",
+          comments: "12",
+          shares: "14",
           views: "6.1K"
         }
       },
@@ -90,9 +94,9 @@ export const projectsData: ProjectItem[] = [
         duration: "00:00/00:24",
         viewsBadge: "Travel Friendly",
         stats: {
-          likes: "2,150",
-          comments: "112",
-          shares: "360",
+          likes: "33",
+          comments: "9",
+          shares: "11",
           views: "4.8K"
         }
       },
@@ -111,15 +115,15 @@ export const projectsData: ProjectItem[] = [
         duration: "00:00/00:19",
         viewsBadge: "Top 11K+ Views",
         stats: {
-          likes: "3,850",
-          comments: "165",
-          shares: "640",
+          likes: "98",
+          comments: "28",
+          shares: "34",
           views: "11K+"
         }
       }
     ],
     badgeColor: "pink",
-    summary: "Đảm nhiệm vai trò Content Marketing tại MT Digital Agency, phụ trách toàn diện dự án Quốc Phong Hair Salon & Head Spa (68 Lý Tự Trọng): từ nghiên cứu thị trường Hair & Beauty, phân tích đối thủ, insight khách hàng, xây dựng Content Calendar 3 tháng, biên tập caption song ngữ, thiết kế visual, đến trực tiếp quay dựng short-form video và tối ưu hóa hiệu quả nội dung thu hút hàng chục nghìn lượt tương tác tự nhiên.",
+    summary: "Đảm nhiệm vai trò Content Marketing tại MT Digital Agency, phụ trách toàn diện dự án Quốc Phong Hair Salon & Head Spa (68 Lý Tự Trọng): từ nghiên cứu thị trường Hair & Beauty, phân tích đối thủ, insight khách hàng, xây dựng Content Calendar 3 tháng, biên tập caption song ngữ, thiết kế visual, đến trực tiếp quay dựng short-form video và tối ưu hóa hiệu quả nội dung đạt 93.8K lượt xem, tiếp cận 25.7K người xem duy nhất (+93.1%) và hơn 51K lượt xem tự nhiên.",
     concept: "Xây dựng hình ảnh một Hair Salon & Head Spa chuyên nghiệp, tận tâm và thân thiện với du khách (Travel-Friendly Experience). Định vị thương hiệu thông qua 5 Content Pillars vững chắc: Hair Transformation, Hair Education, Trust & Credibility, Travel-Friendly Experience và Lifestyle & Community.",
     challenge: "Thị trường Hair & Beauty cạnh tranh khốc liệt tại khu vực trung tâm Quận 1. Cần tìm ra Content Angle độc đáo, kết hợp giữa sự tư vấn chân thực ('Every Great Hair Starts with Honest Consultation'), tay nghề kỹ thuật cao ('See Our Work. Know Our Quality') và uy tín với khách du lịch quốc tế ('Trusted by Travelers Around the World').",
     scopeOfWork: [
@@ -160,17 +164,17 @@ export const projectsData: ProjectItem[] = [
       }
     ],
     metrics: [
-      { label: "Video cao nhất", value: "11K+ Views" },
-      { label: "Video nổi bật", value: "9.6K & 6.1K" },
-      { label: "Lộ trình Content", value: "3 Tháng Calendar" },
-      { label: "Độ tiếp cận", value: "100% Organic" }
+      { label: "Tổng lượt xem (28D)", value: "93.8K (+39%)" },
+      { label: "Người xem tiếp cận", value: "25.7K (+93.1%)" },
+      { label: "Lượt xem tự nhiên", value: "51.1K Organic" },
+      { label: "Thời gian xem video", value: "1 Ngày 20 Giờ" }
     ],
     results: [
-      "Video Reels cao nhất đạt 11.000+ views tự nhiên cùng hàng loạt video đạt 9.6K, 6.1K, 4.8K, 4.1K views",
-      "Xây dựng hoàn chỉnh chiến lược và hệ thống Content Calendar 3 tháng bài bản với 5 Pillars cốt lõi",
-      "Sản xuất chuỗi short-form video thực tế về kỹ thuật tạo mẫu tóc và trải nghiệm khách hàng tại salon",
-      "Triển khai hệ thống bài viết song ngữ Anh - Việt chuyên nghiệp, thành công thu hút khách du lịch quốc tế",
-      "Tối ưu hóa nội dung giúp tăng trưởng mạnh mẽ lượt tương tác và tỷ lệ chuyển đổi khách hàng thực tế"
+      "Tổng lượt xem nội dung đạt mốc 93.8K (93.756 lượt xem trong 28 ngày, tăng 39%), trong đó 51.080 lượt xem hoàn toàn tự nhiên (organic reach) và 42.676 lượt xem qua quảng cáo",
+      "Tiếp cận 25.676 người xem duy nhất trên Facebook với tỷ lệ tăng trưởng vượt trội +93.1%",
+      "Thời gian xem video tích lũy đạt 1 ngày 20 giờ (+54.4%), với 9.600+ lượt xem tối thiểu 3 giây và chuỗi video Reels đạt đỉnh 11K+, 9.6K, 6.1K views",
+      "Tạo ra 324 lượt tương tác nội dung (+28.6%) cùng 244 lượt click chuyển đổi vào liên kết dịch vụ tại salon",
+      "Xây dựng hoàn chỉnh chiến lược Content Calendar 3 tháng bài bản với 5 Pillars cốt lõi và chuỗi video song ngữ Anh - Việt thu hút tệp khách du lịch quốc tế"
     ],
     externalLinks: [
       {
@@ -525,10 +529,13 @@ export const projectsData: ProjectItem[] = [
       "/projects/OTHK EDUCATION/IMG_0465.JPG",
       "/projects/OTHK EDUCATION/IMG_0464.JPG",
       "/projects/OTHK EDUCATION/IMG_0466.JPG",
-      "/projects/OTHK EDUCATION/IMG_0469.JPG"
+      "/projects/OTHK EDUCATION/IMG_0469.JPG",
+      "/projects/OTHK EDUCATION/IMG_1053.JPG",
+      "/projects/OTHK EDUCATION/IMG_1054.JPG",
+      "/projects/OTHK EDUCATION/IMG_1055.JPG"
     ],
     imageCaptions: {
-      "/projects/OTHK EDUCATION/IMG_0463.JPG": "Xây dựng và phát triển cộng đồng 'Góc học tập UEH – Đại học Kinh tế TP.HCM' cán mốc 10.5K+ thành viên (vượt xa mục tiêu 7.000+ thành viên trong 3 tháng).",
+      "/projects/OTHK EDUCATION/IMG_0463.JPG": "Xây dựng và phát triển cộng đồng 'Góc học tập UEH – Đại học Kinh tế TP.HCM' cán mốc 10.7K+ thành viên (vượt xa mục tiêu ban đầu trong 3 tháng).",
       "/projects/OTHK EDUCATION/0e60b2eb26f4a6a4c1c006ecac534d74.png": "Bài viết viral trong group đạt 25.1K lượt tiếp cận tự nhiên, 150 cảm xúc và 61 lượt chia sẻ thảo luận sôi nổi.",
       "/projects/OTHK EDUCATION/a56fdbb3cd6c0aa88596ef4cc6c4316a.png": "Content gắn liền với đời sống sinh viên cơ sở UEH đạt 22.3K lượt tiếp cận, 216 cảm xúc và 33 bình luận tương tác.",
       "/projects/OTHK EDUCATION/9e8ef5b2e9f2fc7604c29d4af7c0e543.png": "Chiến lược nội dung đánh trúng insight: 'Bỏ túi bí kíp săn học bổng UEH dành cho K52' giải quyết nỗi lo của tân sinh viên.",
@@ -536,10 +543,13 @@ export const projectsData: ProjectItem[] = [
       "/projects/OTHK EDUCATION/IMG_0465.JPG": "Báo cáo hiệu quả: Nhóm trường UEH do Kim Thuyên phụ trách đạt hiệu quả cao nhất hệ thống với 55.7% KPI và 469 thành viên mới.",
       "/projects/OTHK EDUCATION/IMG_0464.JPG": "Vinh danh danh hiệu 'Best Builder' trao cho Lê Thị Kim Thuyên nhờ thành tích phát triển cộng đồng xuất sắc.",
       "/projects/OTHK EDUCATION/IMG_0466.JPG": "Duy trì danh hiệu 'Best Builder' trong 3 tháng liên tiếp, dẫn đầu toàn bộ các chỉ tiêu tăng trưởng cộng đồng sinh viên.",
-      "/projects/OTHK EDUCATION/IMG_0469.JPG": "Doanh số dẫn đầu: Nhóm trường UEH mang lại doanh thu cao nhất (34.xxx.000đ với 61 lượt mua khóa học), bỏ xa các nhóm trường khác."
+      "/projects/OTHK EDUCATION/IMG_0469.JPG": "Doanh số dẫn đầu: Nhóm trường UEH mang lại doanh thu cao nhất (34.xxx.000đ với 61 lượt mua khóa học), bỏ xa các nhóm trường khác.",
+      "/projects/OTHK EDUCATION/IMG_1053.JPG": "Báo cáo tăng trưởng thành viên Meta Group (60 ngày): Thu hút 2.395 thành viên mới (+99.58%), 383 người đăng & bình luận (+137.89%), chạm mốc 10.7K+ thành viên.",
+      "/projects/OTHK EDUCATION/IMG_1054.JPG": "Chỉ số thảo luận & tương tác cộng đồng trong 60 ngày: 383 thành viên chủ động tạo bài đăng & bình luận (+137.89%), 63.509 người xem bài viết (+24.88%).",
+      "/projects/OTHK EDUCATION/IMG_1055.JPG": "Biểu đồ người xem bài viết nhóm: Tích lũy 63.509 người xem trong 60 ngày, các đợt cao điểm thi cử cán mốc hơn 3.000 lượt xem/ngày khẳng định vị thế group học tập số 1 UEH."
     },
     badgeColor: "tiffany",
-    summary: "Đảm nhiệm vai trò Content Marketing Freelancer & Community Builder tại OTHK Education: phụ trách giải pháp học tập dành cho sinh viên UEH qua các khóa học môn đại cương và chuyên ngành. Trực tiếp xây dựng và phát triển cộng đồng 'Góc học tập UEH – Đại học Kinh tế TP.HCM' đạt 7.000+ thành viên chỉ trong 3 tháng (hiện đạt 10.5K+ thành viên), sáng tạo các tuyến content viral tiếp cận 25K+ sinh viên/bài, đồng thời đạt danh hiệu Best Builder 3 tháng liên tiếp và đem lại doanh thu cao nhất toàn hệ thống.",
+    summary: "Đảm nhiệm vai trò Content Marketing Freelancer & Community Builder tại OTHK Education: phụ trách giải pháp học tập dành cho sinh viên UEH qua các khóa học môn đại cương và chuyên ngành. Trực tiếp xây dựng và phát triển cộng đồng 'Góc học tập UEH – Đại học Kinh tế TP.HCM' từ 0 cán mốc 10.7K+ thành viên, thu hút 2.395 thành viên mới (+99.6%) và 63.5K+ người xem trong 60 ngày, sáng tạo các tuyến content viral tiếp cận 25K+ sinh viên/bài, đồng thời đạt danh hiệu Best Builder 3 tháng liên tiếp và đem lại doanh thu cao nhất toàn hệ thống (34.xxx.000đ).",
     concept: "Xây dựng một không gian học tập và chia sẻ trải nghiệm thực chiến gần gũi, hữu ích cho sinh viên UEH (đặc biệt là nhóm 2K8/tân sinh viên K52). Thay vì quảng bá khóa học một cách thương mại, định vị cộng đồng là nơi đồng hành giải quyết mọi 'nỗi sợ' học tập: từ bí kíp săn học bổng, rèn luyện GPA môn đại cương (Kinh tế vi mô, vĩ mô, Triết học, Pháp luật) đến kinh nghiệm đời sống sinh viên các cơ sở.",
     challenge: "Sinh viên khối ngành kinh tế rất nhạy cảm với nội dung quảng cáo bán khóa học lộ liễu. Thách thức là phải nghiên cứu sâu insight, văn hóa sinh viên UEH và các giai đoạn thi cử/xét tuyển để sáng tạo nội dung hữu ích, tự nhiên (native content), kích hoạt thành viên tự nguyện thảo luận và tin tưởng chuyển đổi sang khóa học có phí.",
     scopeOfWork: [
@@ -555,7 +565,7 @@ export const projectsData: ProjectItem[] = [
         category: "02. Xây dựng & Vận hành Cộng đồng",
         tasks: [
           "Sáng lập và quản trị nhóm Facebook 'Góc học tập UEH – Đại học Kinh tế TP.HCM'",
-          "Tăng trưởng quy mô từ 0 lên 7.000+ thành viên trong 3 tháng (cán mốc 10.5K+)",
+          "Tăng trưởng quy mô từ 0 lên 7.000+ thành viên trong 3 tháng (cán mốc 10.7K+)",
           "Kiểm duyệt nội dung, tạo thảo luận hỏi đáp và duy trì môi trường học thuật tích cực"
         ]
       },
@@ -577,15 +587,16 @@ export const projectsData: ProjectItem[] = [
       }
     ],
     metrics: [
-      { label: "Tăng trưởng cộng đồng", value: "7.000+ Mems / 3M" },
-      { label: "Quy mô hiện tại", value: "10.5K+ Thành viên" },
-      { label: "Bài viết viral", value: "25.1K Tiếp cận" },
-      { label: "Thành tích cá nhân", value: "Best Builder 3T" }
+      { label: "Quy mô cộng đồng", value: "10.7K+ Thành viên" },
+      { label: "Tăng trưởng 60 ngày", value: "+2.395 Mới (+99.6%)" },
+      { label: "Người xem nội dung", value: "63.5K+ Tiếp cận" },
+      { label: "Thành tích dẫn đầu", value: "Best Builder 3 Tháng" }
     ],
     results: [
-      "Phát triển cộng đồng 'Góc học tập UEH' từ con số 0 cán mốc 7.000+ thành viên chỉ trong 3 tháng (vượt KPI), hiện đạt 10.5K+ thành viên",
+      "Phát triển cộng đồng 'Góc học tập UEH' từ con số 0 cán mốc 7.000+ thành viên chỉ trong 3 tháng và hiện đạt quy mô 10.7K+ thành viên",
+      "Báo cáo Meta Group Insights ghi nhận tăng trưởng vượt bậc trong 60 ngày: kết nạp 2.395 thành viên mới (+99.58%), 63.509 người xem nội dung (+24.88%) và số người đăng & thảo luận tăng +137.89%",
       "Sản xuất chuỗi bài viết Social Media viral với lượt tiếp cận tự nhiên đạt 25.1K và 22.3K sinh viên/bài",
-      "Vinh danh danh hiệu Best Builder trong 3 tháng liên tiếp với hiệu suất hoàn thành KPI dẫn đầu (55.7%)",
+      "Vinh danh danh hiệu Best Builder trong 3 tháng liên tiếp với hiệu suất hoàn thành KPI dẫn đầu hệ thống (55.7%)",
       "Đạt doanh thu cao nhất trong các nhóm trường được triển khai tại OTHK Education (doanh số 34.xxx.000đ với 61 lượt mua khóa học)",
       "Xây dựng tệp khách hàng trung thành, tạo nền tảng chuyển đổi bền vững cho các môn đại cương và chuyên ngành UEH"
     ],

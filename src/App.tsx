@@ -23,11 +23,11 @@ export default function App() {
           !parsed.projects ||
           !parsed.projects.some((p: any) => p.id === 'proj-savax-luxury-door' && p.videoClips?.some((c: any) => c.image?.includes('thumb_01.jpg'))) ||
           !parsed.projects.some((p: any) => p.id === 'proj-tt-genesis') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-othk-education-ueh') ||
+          !parsed.projects.some((p: any) => p.id === 'proj-othk-education-ueh' && p.galleryImages?.some((img: string) => img.includes('IMG_1053'))) ||
           !parsed.projects.some((p: any) => p.id === 'proj-the-family-bean-coffee' && p.videoClips?.some((c: any) => c.platform === 'facebook')) ||
           !parsed.projects.some((p: any) => p.id === 'proj-pisago-music-art') ||
           !parsed.projects.some((p: any) => p.id === 'proj-steed-sportswear') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.videoClips?.some((c: any) => c.platform === 'facebook')) ||
+          !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.galleryImages?.some((img: string) => img.includes('IMG_1051'))) ||
           !parsed.about ||
           parsed.about.name !== 'Lê Thị Kim Thuyên' ||
           !parsed.hero ||
