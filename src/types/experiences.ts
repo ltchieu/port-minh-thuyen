@@ -1,3 +1,5 @@
+import { ProjectItem } from './projects';
+
 export interface ExperienceItem {
   id: string;
   role: string;
@@ -10,4 +12,6 @@ export interface ExperienceItem {
   skills?: string[];
   logo?: string;
   link?: string;
+  projects?: ProjectItem[];
 }
+

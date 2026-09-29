@@ -6,7 +6,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
 import { ExperiencesSection } from './components/ExperiencesSection';
-import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -20,20 +19,12 @@ export default function App() {
         const parsed = JSON.parse(saved);
         // Ensure new data is loaded if local storage has stale/outdated data
         if (
-          !parsed.projects ||
-          !parsed.projects.some((p: any) => p.id === 'proj-savax-luxury-door' && p.videoClips?.some((c: any) => c.image?.includes('thumb_01.jpg'))) ||
-          !parsed.projects.some((p: any) => p.id === 'proj-tt-genesis') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-othk-education-ueh' && p.galleryImages?.some((img: string) => img.includes('IMG_1053'))) ||
-          !parsed.projects.some((p: any) => p.id === 'proj-the-family-bean-coffee' && p.videoClips?.some((c: any) => c.platform === 'facebook')) ||
-          !parsed.projects.some((p: any) => p.id === 'proj-pisago-music-art') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-steed-sportswear') ||
-          !parsed.projects.some((p: any) => p.id === 'proj-quoc-phong-hair-salon' && p.galleryImages?.some((img: string) => img.includes('IMG_1051'))) ||
+          !parsed.experiences ||
+          !parsed.experiences.some((e: any) => e.projects && e.projects.length > 0) ||
           !parsed.about ||
           parsed.about.name !== 'Lê Thị Kim Thuyên' ||
           !parsed.hero ||
           parsed.hero.profileImage !== '/images/avatar.png' ||
-          !parsed.experiences ||
-          !parsed.experiences.some((e: any) => e.company === 'MT DIGITAL AGENCY') ||
           !parsed.contact ||
           parsed.contact.email !== 'kimthuyen014@gmail.com' ||
           parsed.contact.phone !== '0913104395'
@@ -53,7 +44,7 @@ export default function App() {
 
   // Scroll section detector
   useEffect(() => {
-    const sections = ['hero', 'about', 'experiences', 'projects', 'contact'];
+    const sections = ['hero', 'about', 'experiences', 'contact'];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -98,13 +89,10 @@ export default function App() {
         {/* 2. About Me Section */}
         <AboutSection data={data.about} />
 
-        {/* 3. Experiences Section */}
+        {/* 3. Experiences & Projects Section */}
         <ExperiencesSection experiences={data.experiences} />
 
-        {/* 4. Selected Projects Section */}
-        <ProjectsSection projects={data.projects} />
-
-        {/* 5. Contact Section */}
+        {/* 4. Contact Section */}
         <ContactSection data={data.contact} />
       </main>
 
